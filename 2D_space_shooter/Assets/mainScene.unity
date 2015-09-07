@@ -130,6 +130,7 @@ MonoBehaviour:
   Lowerboundry_x: -7
   Lowerboundry_y: -5
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
+  v2: {x: 0, y: 0}
 --- !u!212 &223828007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -421,3 +422,4 @@ MonoBehaviour:
   Lowerboundry_x: -10
   Lowerboundry_y: -10
   laser: {fileID: 0}
+  v2: {x: 0, y: 0}
