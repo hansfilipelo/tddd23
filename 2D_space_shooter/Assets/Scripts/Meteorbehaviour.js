@@ -8,3 +8,4 @@ function Update () {
 rb.MovePosition(rb.position + Vector2(0,-Speed) * Time.fixedDeltaTime);
 
 }
+
