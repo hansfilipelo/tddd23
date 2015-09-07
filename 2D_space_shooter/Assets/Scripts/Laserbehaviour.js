@@ -10,4 +10,13 @@ function Update () {
 	if(rb.position[1] > 6){
 		Destroy(this.gameObject);
 	}
+	
 }
+
+function OnCollisionEnter2D(collision : Collision2D) { 
+     // if the hit object's name is Wall...
+        Destroy(collision.gameObject); // destroy it
+        Destroy(this.gameObject);
+    }
+
+
