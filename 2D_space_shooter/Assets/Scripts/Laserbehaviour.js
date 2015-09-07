@@ -17,7 +17,6 @@ function OnCollisionEnter2D(collision : Collision2D) {
      // if the hit object's name is Wall...
         Destroy(collision.gameObject); // destroy it
         Destroy(this.gameObject);
-        Debug.Log("bla");
     }
 
 
