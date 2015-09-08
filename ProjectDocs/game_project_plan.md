@@ -1,4 +1,4 @@
-# TDDD23 game project plan [Unknown]
+# TDDD23 game project plan [Unknown name]
 
 ## Game idea
 
