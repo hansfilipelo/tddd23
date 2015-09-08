@@ -41,7 +41,7 @@ function Update () {
     rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
     v2 = Vector2(0,0);
 	
-	if(Input.GetKeyDown(Shoot))
+	if(Input.GetKey(Shoot))
 	{
 		if (shootCount >= 10){
 				Instantiate(laser, rb.position +Vector2(0,1) , Quaternion.identity);
