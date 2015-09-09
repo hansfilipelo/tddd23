@@ -11,10 +11,10 @@ var shootCount : int=0;
 
 var rb : Rigidbody2D;
 
-var Upperboundry_x : float;
-var Upperboundry_y : float;
-var Lowerboundry_x : float;
-var Lowerboundry_y : float;
+static var Upperboundry_x : float=7;
+static var Upperboundry_y : float=5;
+static var Lowerboundry_x : float=-7;
+static var Lowerboundry_y : float=-5;
 
 var laser : Transform;
 
