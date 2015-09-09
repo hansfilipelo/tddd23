@@ -126,6 +126,7 @@ MonoBehaviour:
   shootCount: 0
   rb: {fileID: 223828009}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
+  v2: {x: 0, y: 0}
 --- !u!212 &223828007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -419,19 +420,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05e4f76a4bdb49a8935437c06d4f02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Star1: {fileID: 402600, guid: d317d24428c814968b141df6218f871b, type: 2}
-  Star2: {fileID: 425626, guid: b19ee0dffc19f428bb34f71c8e9b81d1, type: 2}
-  Star3: {fileID: 469130, guid: 76cc4e8c2d6d94bfd98b52edfddf482d, type: 2}
-  Spawnrate: 1
---- !u!4 &1586090380
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1586090378}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .136663899, y: -.0398603268, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  MoveUp: 0
+  MoveDown: 0
+  MoveLeft: 0
+  MoveRight: 0
+  Shoot: 0
+  Speed: 0
+  shootCount: 0
+  rb: {fileID: 0}
+  Upperboundry_x: 10
+  Upperboundry_y: 10
+  Lowerboundry_x: -10
+  Lowerboundry_y: -10
+  laser: {fileID: 0}
+  v2: {x: 0, y: 0}

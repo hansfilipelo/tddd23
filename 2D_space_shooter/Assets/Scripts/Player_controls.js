@@ -18,23 +18,28 @@ static var Lowerboundry_y : float=-5;
 
 var laser : Transform;
 
+var v2 : Vector2=Vector2(0,0);
+
 function Update () {
 	if (Input.GetKey(MoveUp) && rb.position[1] < Upperboundry_y)
 	{
-	rb.MovePosition(rb.position + Vector2(0,Speed) * Time.fixedDeltaTime);
+		v2 += Vector2(0,1);
 	}
-	else if(Input.GetKey(MoveDown) && rb.position[1] > Lowerboundry_y)
+	if(Input.GetKey(MoveDown) && rb.position[1] > Lowerboundry_y)
 	{
-	rb.MovePosition(rb.position + Vector2(0,-Speed) * Time.fixedDeltaTime);
+		v2 += Vector2(0,-1);
 	}
-	else if(Input.GetKey(MoveLeft) && rb.position[0] > Lowerboundry_x)
+	if(Input.GetKey(MoveLeft) && rb.position[0] > Lowerboundry_x)
 	{
-	rb.MovePosition(rb.position + Vector2(-Speed,0) * Time.fixedDeltaTime);
+		v2 += Vector2(-1,0);
 	}
-	else if(Input.GetKey(MoveRight) && rb.position[0] < Upperboundry_x)
+	if(Input.GetKey(MoveRight) && rb.position[0] < Upperboundry_x)
 	{
-	rb.MovePosition(rb.position + Vector2(Speed,0) * Time.fixedDeltaTime);
+		v2 += Vector2(1,0);
 	}
+	
+    rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
+    v2 = Vector2(0,0);
 	
 	if(Input.GetKey(Shoot))
 	{
