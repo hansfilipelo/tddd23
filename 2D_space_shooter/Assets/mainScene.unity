@@ -125,10 +125,6 @@ MonoBehaviour:
   Speed: 3
   shootCount: 0
   rb: {fileID: 223828009}
-  Upperboundry_x: 7
-  Upperboundry_y: 5
-  Lowerboundry_x: -7
-  Lowerboundry_y: -5
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
   v2: {x: 0, y: 0}
 --- !u!212 &223828007
@@ -323,7 +319,6 @@ GameObject:
   - 92: {fileID: 1445404136}
   - 124: {fileID: 1445404135}
   - 81: {fileID: 1445404134}
-  - 114: {fileID: 1445404139}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -361,7 +356,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -398,15 +393,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1445404139
+--- !u!1 &1586090378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1586090380}
+  - 114: {fileID: 1586090379}
+  m_Layer: 0
+  m_Name: StarScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586090379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1445404133}
+  m_GameObject: {fileID: 1586090378}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4ce0a3ddbd14d9fb672bd6d6798bd5, type: 3}
+  m_Script: {fileID: 11500000, guid: c05e4f76a4bdb49a8935437c06d4f02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MoveUp: 0
