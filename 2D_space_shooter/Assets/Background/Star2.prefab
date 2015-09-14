@@ -57,8 +57,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c12d0b5e839485d9d10b08820a8689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: .800000012
-  minSpeed: .5
+  maxSpeed: .100000001
+  minSpeed: .0500000007
   rb: {fileID: 5084836}
   speed: 0
 --- !u!212 &21294134
@@ -96,11 +96,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: maxSpeed
-      value: .800000012
+      value: .100000001
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: minSpeed
-      value: .5
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
