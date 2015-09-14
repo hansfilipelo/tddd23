@@ -27,5 +27,9 @@ function Update () {
 	rb.MovePosition(rb.position + Vector2(xMovement * Mathf.Min(scaler/counter,counter/scaler),-Speed) * Time.fixedDeltaTime);
 	counter++;
 	scaler--;
+	
+	if(rb.position[1] < -Player_controls.Upperboundry_y){
+		Destroy(this.gameObject);
+	}
 }
 
