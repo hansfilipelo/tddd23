@@ -24,7 +24,8 @@ function Update () {
 		counter = 1;
 		scaler = counterMax + 1;
 	}
-	rb.MovePosition(rb.position + Vector2(xMovement * Mathf.Min(scaler/counter,counter/scaler),-Speed) * Time.fixedDeltaTime);
+	rb.MovePosition(rb.position + Vector2(0,-Speed) * Time.fixedDeltaTime);
+	rb.AddForce(Vector2.right * xMovement);
 	counter++;
 	scaler--;
 	
