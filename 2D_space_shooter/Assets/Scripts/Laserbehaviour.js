@@ -14,9 +14,16 @@ function Update () {
 }
 
 function OnCollisionEnter2D(collision : Collision2D) { 
-     // if the hit object's name is Wall...
-        Destroy(collision.gameObject); // destroy it
-        Destroy(this.gameObject);
-    }
 
+     	if (collision.gameObject.name=="Playbutton") {
+     		
+     		Application.LoadLevel ("mainScene");
+   		}else if(collision.gameObject.name=="Leaderboard"){
+     		yield WaitForSeconds(1);
+     		Application.LoadLevel ("mainScene");
+     	}else{
+        	Destroy(collision.gameObject); // destroy it
+       		Destroy(this.gameObject);
+    }
+}
 
