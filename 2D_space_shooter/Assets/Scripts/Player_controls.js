@@ -8,6 +8,7 @@ var MoveRight : KeyCode;
 var Shoot : KeyCode;
 var Speed : float;
 var shootCount : int=0;
+var life : float;
 
 var rb : Rigidbody2D;
 
@@ -51,3 +52,15 @@ function Update () {
 	
 	shootCount++;
 }
+
+// Collition detection
+
+function OnCollisionEnter2D(collision : Collision2D) { 
+	life -= 10;
+	Destroy(collision.gameObject);
+	
+	if(life <= 0){
+		Destroy(this.gameObject);
+	}
+}
+

@@ -12,7 +12,7 @@ speed = Random.Range(minSpeed,maxSpeed);
 function Update () {
 	rb.MovePosition(rb.position + Vector2(0,-speed) * Time.fixedDeltaTime);
 	
-	if(rb.position[1] < -6){
+	if(rb.position[1] < -Player_controls.Upperboundry_y){
 		Destroy(this.gameObject);
 	}
 }
