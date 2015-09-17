@@ -19,8 +19,10 @@ function OnCollisionEnter2D(collision : Collision2D) {
      		
      		Application.LoadLevel ("mainScene");
    		}else if(collision.gameObject.name=="Leaderboard"){
-     		yield WaitForSeconds(1);
-     		Application.LoadLevel ("mainScene");
+     		
+     		Application.LoadLevel ("Leaderboard");
+     	}else if(collision.gameObject.name=="Backbutton"){
+     		Application.LoadLevel ("Startmenu");
      	}else{
         	Destroy(collision.gameObject); // destroy it
        		Destroy(this.gameObject);
