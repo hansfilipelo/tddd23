@@ -61,6 +61,7 @@ function OnCollisionEnter2D(collision : Collision2D) {
 	
 	if(life <= 0){
 		Destroy(this.gameObject);
+		Application.LoadLevel ("Startmenu");
 	}
 }
 

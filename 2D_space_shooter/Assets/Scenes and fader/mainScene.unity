@@ -166,7 +166,7 @@ MonoBehaviour:
   Shoot: 32
   Speed: 5
   shootCount: 0
-  life: 100
+  life: 10
   rb: {fileID: 223828009}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
   v2: {x: 0, y: 0}
