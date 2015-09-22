@@ -12,9 +12,9 @@ var life : float;
 
 var rb : Rigidbody2D;
 
-static var Upperboundry_x : float=7;
+static var Upperboundry_x : float=4;
 static var Upperboundry_y : float=5;
-static var Lowerboundry_x : float=-7;
+static var Lowerboundry_x : float=-4;
 static var Lowerboundry_y : float=-5;
 
 var laser : Transform;

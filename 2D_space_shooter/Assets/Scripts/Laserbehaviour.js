@@ -17,7 +17,7 @@ function OnCollisionEnter2D(collision : Collision2D) {
 
      	if (collision.gameObject.name=="Playbutton") {
      		
-     		Application.LoadLevel ("mainScene");
+     		Application.LoadLevel ("Level1");
    		}else if(collision.gameObject.name=="Leaderboard"){
      		
      		Application.LoadLevel ("Leaderboard");

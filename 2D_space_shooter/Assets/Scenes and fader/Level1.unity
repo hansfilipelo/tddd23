@@ -368,6 +368,8 @@ MonoBehaviour:
   Star2: {fileID: 425626, guid: b19ee0dffc19f428bb34f71c8e9b81d1, type: 2}
   Star3: {fileID: 469130, guid: 76cc4e8c2d6d94bfd98b52edfddf482d, type: 2}
   Spawnrate: 5
+  spawnStarMax: 1
+  spawnStarMin: 6
 --- !u!4 &1586090380
 Transform:
   m_ObjectHideFlags: 0
