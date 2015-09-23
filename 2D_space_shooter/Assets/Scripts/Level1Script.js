@@ -38,9 +38,12 @@ function meteorWave(nr : int){
 function enemy1Wave(nr : int){
 	enemyWave1Spawned = 1;
 	for(var i = 0; i < nr; i++){
-		Instantiate(enemy1Fab, Vector2(Player_controls.Lowerboundry_x-i,Player_controls.Upperboundry_y+1+i), Quaternion.identity);
+		Instantiate(enemy1Fab, Vector2(Player_controls.Lowerboundry_x-i,Player_controls.Upperboundry_y+1+2*i), Quaternion.identity);
 	}
 }
+
+// --
+
 
 //--
 
