@@ -277,9 +277,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
-  meteorSpawn: 2
-  meteorSpawnTime: 0
+  meteorWaveSpawn: 2
+  meteorSpawnTime: 14
   meteorsSpawned: 0
+  enemy1Fab: {fileID: 491806, guid: 8d16f26fea28c48c1bf2119a41cf1402, type: 2}
+  enemy1SpawnTime: 0
+  enemyWave1Time: 8
+  enemyWave1Spawned: 0
+  enemy2Fab: {fileID: 418640, guid: 604b25f97bc9746de99abd1792d72964, type: 2}
+  enemy2SpawnTime: 0
+  enemyWave2Time: 14
+  enemyWave2Spawned: 0
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0
