@@ -21,6 +21,14 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
+function hit(damage : int) {
+	life -= damage;
+	if (life <= 0) {
+		Destroy(this.gameObject);
+		Application.LoadLevel ("Startmenu");
+	}
+}
+
 function Update () {
 	if (Input.GetKey(MoveUp) && rb.position[1] < Upperboundry_y)
 	{
@@ -51,16 +59,4 @@ function Update () {
 	}
 
 	shootCount++;
-}
-
-// Collition detection
-
-function OnCollisionEnter2D(collision : Collision2D) {
-	life -= 10;
-	Destroy(collision.gameObject);
-
-	if(life <= 0){
-		Destroy(this.gameObject);
-		Application.LoadLevel ("Startmenu");
-	}
 }
