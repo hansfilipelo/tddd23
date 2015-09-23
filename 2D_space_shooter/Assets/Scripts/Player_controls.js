@@ -38,30 +38,29 @@ function Update () {
 	{
 		v2 += Vector2(1,0);
 	}
-	
+
     rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
     v2 = Vector2(0,0);
-	
+
 	if(Input.GetKey(Shoot))
 	{
 		if (shootCount >= 10){
-				Instantiate(laser, rb.position +Vector2(0,1) , Quaternion.identity);
+				Instantiate(laser, rb.position +Vector2(0,0.7) , Quaternion.identity);
 				shootCount = 0;
 			}
 	}
-	
+
 	shootCount++;
 }
 
 // Collition detection
 
-function OnCollisionEnter2D(collision : Collision2D) { 
+function OnCollisionEnter2D(collision : Collision2D) {
 	life -= 10;
 	Destroy(collision.gameObject);
-	
+
 	if(life <= 0){
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
 	}
 }
-

@@ -5,10 +5,19 @@ var xMovement : float;
 var speed : float;
 var stopAndHoverPos : float;
 var direction;
+var life : int;
 
 function Start () {
 	direction = "right";
 	stopAndHoverPos = Player_controls.Upperboundry_y-1.5;
+	life = 60;
+}
+
+function hit(damage : int) {
+	life -= damage;
+	if (life <= 0) {
+		Destroy(this.gameObject);
+	}
 }
 
 function Update () {
