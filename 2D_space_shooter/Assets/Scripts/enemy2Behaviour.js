@@ -6,11 +6,15 @@ var speed : float;
 var stopAndHoverPos : float;
 var direction;
 var life : int;
+var shootCount : int;
+
+var laser : Transform;
 
 function Start () {
 	direction = "right";
 	stopAndHoverPos = Player_controls.Upperboundry_y-1.5;
 	life = 60;
+	shootCount = 0;
 }
 
 function hit(damage : int) {
@@ -38,6 +42,12 @@ function Update () {
 	else {
 		rb.MovePosition(rb.position + Vector2(0,-1) * Time.fixedDeltaTime * speed);
 	}
+
+	if (shootCount > 40) {
+		Instantiate(laser, rb.position +Vector2(0,-0.7) , Quaternion.identity);
+		shootCount = 0;
+	}
+	shootCount++;
 
 	if(rb.position[1] < Player_controls.Lowerboundry_y){
 		Destroy(this.gameObject);
