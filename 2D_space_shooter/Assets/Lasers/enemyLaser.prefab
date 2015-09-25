@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21274288}
   - 114: {fileID: 11400854}
   - 50: {fileID: 5099152}
+  - 58: {fileID: 5898542}
   m_Layer: 0
   m_Name: enemyLaser
   m_TagString: Untagged
@@ -46,6 +47,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &5898542
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 102144}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .185000002
 --- !u!114 &11400854
 MonoBehaviour:
   m_ObjectHideFlags: 1

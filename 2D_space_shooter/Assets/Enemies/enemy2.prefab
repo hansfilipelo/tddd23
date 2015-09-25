@@ -76,6 +76,8 @@ MonoBehaviour:
   speed: 3
   stopAndHoverPos: 0
   life: 0
+  shootCount: 0
+  laser: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
 --- !u!212 &21285906
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,6 +139,10 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186822}
