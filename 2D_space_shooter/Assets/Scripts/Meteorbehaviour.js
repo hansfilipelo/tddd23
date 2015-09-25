@@ -42,3 +42,10 @@ function Update () {
 		Destroy(this.gameObject);
 	}
 }
+
+function OnCollisionEnter2D(collision : Collision2D) {
+	if (collision.gameObject.name != this.gameObject.name) {
+		collision.gameObject.SendMessage("hit", 50);; // destroy it
+		Destroy(this.gameObject);
+	}
+}
