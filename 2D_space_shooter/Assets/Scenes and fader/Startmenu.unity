@@ -155,7 +155,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -350,6 +349,8 @@ MonoBehaviour:
   Star2: {fileID: 425626, guid: b19ee0dffc19f428bb34f71c8e9b81d1, type: 2}
   Star3: {fileID: 469130, guid: 76cc4e8c2d6d94bfd98b52edfddf482d, type: 2}
   Spawnrate: 5
+  spawnStarMax: 0
+  spawnStarMin: 0
 --- !u!4 &1148957497
 Transform:
   m_ObjectHideFlags: 0
@@ -656,6 +657,51 @@ BoxCollider2D:
   m_Offset: {x: -49.4934044, y: -13.4130459}
   serializedVersion: 2
   m_Size: {x: 122.951019, y: 32.0340843}
+--- !u!1 &1707987797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1707987799}
+  - 114: {fileID: 1707987798}
+  m_Layer: 0
+  m_Name: StarScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1707987798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707987797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05e4f76a4bdb49a8935437c06d4f02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Star1: {fileID: 402600, guid: d317d24428c814968b141df6218f871b, type: 2}
+  Star2: {fileID: 425626, guid: b19ee0dffc19f428bb34f71c8e9b81d1, type: 2}
+  Star3: {fileID: 469130, guid: 76cc4e8c2d6d94bfd98b52edfddf482d, type: 2}
+  Spawnrate: 2
+  spawnStarMax: 1
+  spawnStarMin: 6
+--- !u!4 &1707987799
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1707987797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
 --- !u!1 &2126852852
 GameObject:
   m_ObjectHideFlags: 0
