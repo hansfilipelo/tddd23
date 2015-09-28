@@ -20,6 +20,11 @@ var enemy3SpawnTime : float;
 var enemyWave3Time : float;
 var enemyWave3Spawned : int;
 
+var enemy4Fab : Transform;
+var enemy4SpawnTime : float;
+var enemyWave4Time : float;
+var enemyWave4Spawned : int;
+
 function Start () {
 
 	// Set up scenes outer edges
@@ -37,6 +42,12 @@ function Start () {
 
 	enemyWave2Spawned = 0;
 	enemy2SpawnTime = Time.time + enemyWave2Time;
+
+	enemyWave3Spawned = 0;
+	enemy3SpawnTime = Time.time + enemyWave3Time;
+
+	enemyWave4Spawned = 0;
+	enemy4SpawnTime = Time.time + enemyWave4Time;
 }
 
 
@@ -76,6 +87,15 @@ function enemy3Wave(nr : int){
 	}
 }
 
+// ---
+
+function enemy4Wave(nr : int){
+	enemyWave4Spawned = 1;
+	for(var i = 0; i < nr; i++){
+		Instantiate(enemy4Fab, Vector2(Player_controls.Lowerboundry_x+i,Player_controls.Upperboundry_y+1), Quaternion.identity);
+	}
+}
+
 //--
 
 function Update () {
@@ -94,5 +114,9 @@ function Update () {
 
 	if(!enemyWave3Spawned && Time.time > enemy3SpawnTime){
 		enemy3Wave(3);
+	}
+
+	if(!enemyWave4Spawned && Time.time > enemy4SpawnTime){
+		enemy4Wave(1);
 	}
 }
