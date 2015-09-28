@@ -53,7 +53,7 @@ function Update () {
 	if(Input.GetKey(Shoot))
 	{
 		if (shootCount >= 10){
-				Instantiate(laser, rb.position +Vector2(0,0.7) , Quaternion.identity);
+				Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
 				shootCount = 0;
 			}
 	}

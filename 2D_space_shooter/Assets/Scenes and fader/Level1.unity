@@ -207,7 +207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!50 &223828009
 Rigidbody2D:
   serializedVersion: 2
@@ -301,7 +301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1445404133
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,15 +387,15 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &1847768914
+--- !u!1 &1586090378
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1847768916}
-  - 114: {fileID: 1847768915}
+  - 4: {fileID: 1586090380}
+  - 114: {fileID: 1586090379}
   m_Layer: 0
   m_Name: StarScript
   m_TagString: Untagged
@@ -403,12 +403,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1847768915
+--- !u!114 &1586090379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1847768914}
+  m_GameObject: {fileID: 1586090378}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c05e4f76a4bdb49a8935437c06d4f02c, type: 3}
@@ -417,18 +417,18 @@ MonoBehaviour:
   Star1: {fileID: 402600, guid: d317d24428c814968b141df6218f871b, type: 2}
   Star2: {fileID: 425626, guid: b19ee0dffc19f428bb34f71c8e9b81d1, type: 2}
   Star3: {fileID: 469130, guid: 76cc4e8c2d6d94bfd98b52edfddf482d, type: 2}
-  Spawnrate: 2
+  Spawnrate: 5
   spawnStarMax: 1
-  spawnStarMin: 6
---- !u!4 &1847768916
+  spawnStarMin: 4
+--- !u!4 &1586090380
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1847768914}
+  m_GameObject: {fileID: 1586090378}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1

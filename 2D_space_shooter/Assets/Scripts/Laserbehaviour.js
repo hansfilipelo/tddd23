@@ -1,7 +1,12 @@
-#pragma strict
+﻿#pragma strict
 
 var rb: Rigidbody2D;
+var hitSound : AudioClip;
 var Speed : float;
+var Explosion : Transform;
+
+function hit(damage : int) {
+}
 
 function Update () {
 
@@ -15,17 +20,23 @@ function Update () {
 
 function OnCollisionEnter2D(collision : Collision2D) {
 
-	
-	if (collision.gameObject.name=="Playbutton") {
+     	if (collision.gameObject.name=="Playbutton") {
 
-		Application.LoadLevel ("Level1");
-	}else if(collision.gameObject.name=="Leaderboard"){
 
-		Application.LoadLevel ("Leaderboard");
-	}else if(collision.gameObject.name=="Backbutton"){
-		Application.LoadLevel ("Startmenu");
-	}else{
-		collision.gameObject.SendMessage("hit", 10);; // destroy it
-		Destroy(this.gameObject);
-	}
+     		Application.LoadLevel ("Level1");
+   		}else if(collision.gameObject.name=="Leaderboard"){
+
+
+
+     		Application.LoadLevel ("Leaderboard");
+     	}else if(collision.gameObject.name=="Backbutton"){
+
+
+     		Application.LoadLevel ("Startmenu");
+     	}else{
+     		AudioSource.PlayClipAtPoint(hitSound, rb.position);
+     		Instantiate(Explosion, rb.position, Quaternion.identity);
+        	collision.gameObject.SendMessage("hit", 10);
+       		Destroy(this.gameObject);
+    }
 }

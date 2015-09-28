@@ -7,7 +7,7 @@ var movementVector : Vector2;
 var life : int;
 
 function Start () {
-	life = 40;
+	life = 20;
 	movementVector = Vector2(xMovement,-Speed);
 }
 

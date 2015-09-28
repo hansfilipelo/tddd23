@@ -16,7 +16,7 @@ function Start() {
 	scaler=counterMax + 1;
 	Speed = Random.Range(speedMin,speedMax);
 	xMovement = Random.Range(-spread,spread);
-	life = 20;
+	life = 10;
 }
 
 function hit(damage : int) {
