@@ -298,6 +298,10 @@ MonoBehaviour:
   enemy4SpawnTime: 0
   enemyWave4Time: 35
   enemyWave4Spawned: 0
+  enemy5Fab: {fileID: 483530, guid: c077f1c4a0279433dbaa590fd6e8a417, type: 2}
+  enemy5SpawnTime: 0
+  enemyWave5Time: 41
+  enemyWave5Spawned: 0
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0
