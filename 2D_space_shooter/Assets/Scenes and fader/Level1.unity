@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453072, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
@@ -290,6 +290,10 @@ MonoBehaviour:
   enemy2SpawnTime: 0
   enemyWave2Time: 14
   enemyWave2Spawned: 0
+  enemy3Fab: {fileID: 403888, guid: 8bcd8ba9ee2fb407e9000143a09d150c, type: 2}
+  enemy3SpawnTime: 20
+  enemyWave3Time: 26
+  enemyWave3Spawned: 0
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0
