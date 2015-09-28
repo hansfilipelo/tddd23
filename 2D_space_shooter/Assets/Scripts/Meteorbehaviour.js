@@ -9,16 +9,25 @@ var counter : float;
 var scaler : float;
 var xMovement : float;
 var counterMax : float;
+var life : int;
 
 function Start() {
 	counter=0;
 	scaler=counterMax + 1;
 	Speed = Random.Range(speedMin,speedMax);
 	xMovement = Random.Range(-spread,spread);
+	life = 10;
+}
+
+function hit(damage : int) {
+	life -= damage;
+	if (life <= 0) {
+		Destroy(this.gameObject);
+	}
 }
 
 function Update () {
-	
+
 	if (counter >= counterMax){
 		xMovement = Random.Range(-spread,spread);
 		counter = 1;
@@ -28,9 +37,15 @@ function Update () {
 	rb.AddForce(Vector2.right * xMovement);
 	counter++;
 	scaler--;
-	
+
 	if(rb.position[1] < -Player_controls.Upperboundry_y){
 		Destroy(this.gameObject);
 	}
 }
 
+function OnCollisionEnter2D(collision : Collision2D) {
+	if (collision.gameObject.name == "Player ship") {
+		collision.gameObject.SendMessage("hit", 50);
+		Destroy(this.gameObject);
+	}
+}

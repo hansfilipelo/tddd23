@@ -12,14 +12,22 @@ var life : float;
 
 var rb : Rigidbody2D;
 
-static var Upperboundry_x : float=7;
+static var Upperboundry_x : float=3.5;
 static var Upperboundry_y : float=5;
-static var Lowerboundry_x : float=-7;
+static var Lowerboundry_x : float=-3.5;
 static var Lowerboundry_y : float=-5;
 
 var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
+
+function hit(damage : int) {
+	life -= damage;
+	if (life <= 0) {
+		Destroy(this.gameObject);
+		Application.LoadLevel ("Startmenu");
+	}
+}
 
 function Update () {
 	if (Input.GetKey(MoveUp) && rb.position[1] < Upperboundry_y)
@@ -38,30 +46,17 @@ function Update () {
 	{
 		v2 += Vector2(1,0);
 	}
-	
+
     rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
     v2 = Vector2(0,0);
-	
+
 	if(Input.GetKey(Shoot))
 	{
 		if (shootCount >= 10){
-				Instantiate(laser, rb.position +Vector2(0,1) , Quaternion.identity);
+				Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
 				shootCount = 0;
 			}
 	}
-	
+
 	shootCount++;
 }
-
-// Collition detection
-
-function OnCollisionEnter2D(collision : Collision2D) { 
-	life -= 10;
-	Destroy(collision.gameObject);
-	
-	if(life <= 0){
-		Destroy(this.gameObject);
-		Application.LoadLevel ("Startmenu");
-	}
-}
-
