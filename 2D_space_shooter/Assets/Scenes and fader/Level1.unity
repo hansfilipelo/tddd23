@@ -164,6 +164,11 @@ MonoBehaviour:
   MoveLeft: 97
   MoveRight: 100
   Shoot: 32
+  controllerAvail: 0
+  joyX: 0
+  joyY: 0
+  rightTrigger: 0
+  deadZone: 0
   Speed: 5
   shootCount: 10
   life: 100
