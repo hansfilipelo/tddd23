@@ -164,6 +164,11 @@ MonoBehaviour:
   MoveLeft: 97
   MoveRight: 100
   Shoot: 32
+  controllerAvail: 0
+  joyX: 0
+  joyY: 0
+  rightTrigger: 0
+  deadZone: 0
   Speed: 5
   shootCount: 10
   life: 100
@@ -280,8 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
-  meteorWaveSpawn: 2
-  meteorSpawnTime: 14
+  meteorWaveSpawn: 0
+  meteorSpawnTime: 2
   meteorsSpawned: 0
   enemy1Fab: {fileID: 491806, guid: 8d16f26fea28c48c1bf2119a41cf1402, type: 2}
   enemy1SpawnTime: 0
@@ -291,6 +296,18 @@ MonoBehaviour:
   enemy2SpawnTime: 0
   enemyWave2Time: 14
   enemyWave2Spawned: 0
+  enemy3Fab: {fileID: 403888, guid: 8bcd8ba9ee2fb407e9000143a09d150c, type: 2}
+  enemy3SpawnTime: 0
+  enemyWave3Time: 22
+  enemyWave3Spawned: 0
+  enemy4Fab: {fileID: 465312, guid: 08b040ab8e69c476ab2129d07bd3f11a, type: 2}
+  enemy4SpawnTime: 0
+  enemyWave4Time: 28
+  enemyWave4Spawned: 0
+  enemy5Fab: {fileID: 483530, guid: c077f1c4a0279433dbaa590fd6e8a417, type: 2}
+  enemy5SpawnTime: 0
+  enemyWave5Time: 34
+  enemyWave5Spawned: 0
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0

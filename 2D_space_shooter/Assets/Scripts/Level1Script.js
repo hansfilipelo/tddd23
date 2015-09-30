@@ -3,18 +3,32 @@
 var meteorFab : Transform;
 var meteorWaveSpawn : float;
 var meteorSpawnTime : float;
-var meteorsSpawned : float;
+var meteorsSpawned : int;
 
 var enemy1Fab : Transform;
 var enemy1SpawnTime : float;
 var enemyWave1Time : float;
-var enemyWave1Spawned : float;
+var enemyWave1Spawned : int;
 
 var enemy2Fab : Transform;
 var enemy2SpawnTime : float;
 var enemyWave2Time : float;
-var enemyWave2Spawned : float;
+var enemyWave2Spawned : int;
 
+var enemy3Fab : Transform;
+var enemy3SpawnTime : float;
+var enemyWave3Time : float;
+var enemyWave3Spawned : int;
+
+var enemy4Fab : Transform;
+var enemy4SpawnTime : float;
+var enemyWave4Time : float;
+var enemyWave4Spawned : int;
+
+var enemy5Fab : Transform;
+var enemy5SpawnTime : float;
+var enemyWave5Time : float;
+var enemyWave5Spawned : int;
 
 function Start () {
 
@@ -33,6 +47,15 @@ function Start () {
 
 	enemyWave2Spawned = 0;
 	enemy2SpawnTime = Time.time + enemyWave2Time;
+
+	enemyWave3Spawned = 0;
+	enemy3SpawnTime = Time.time + enemyWave3Time;
+
+	enemyWave4Spawned = 0;
+	enemy4SpawnTime = Time.time + enemyWave4Time;
+
+	enemyWave5Spawned = 0;
+	enemy5SpawnTime = Time.time + enemyWave5Time;
 }
 
 
@@ -62,6 +85,36 @@ function enemy2Wave(nr : int){
 	}
 }
 
+// --
+
+function enemy3Wave(nr : int){
+	enemyWave3Spawned = 1;
+	for(var i = 0; i < nr; i++){
+		Instantiate(enemy1Fab, Vector2(Player_controls.Lowerboundry_x-i,Player_controls.Upperboundry_y+1+2*i), Quaternion.identity);
+		Instantiate(enemy3Fab, Vector2(Player_controls.Upperboundry_x+i,Player_controls.Upperboundry_y+1+2*i), Quaternion.identity);
+	}
+}
+
+// ---
+
+function enemy4Wave(nr : int){
+	enemyWave4Spawned = 1;
+	for(var i = 0; i < nr; i++){
+		Instantiate(enemy4Fab, Vector2(Player_controls.Lowerboundry_x+i,Player_controls.Upperboundry_y+1), Quaternion.identity);
+	}
+}
+
+// ---
+
+function enemy5Wave(nr : int){
+	enemyWave5Spawned = 1;
+	Instantiate(enemy5Fab, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
+	for(var i = 1; i < nr; i++){
+		Instantiate(enemy5Fab, Vector2(i*1.5,Player_controls.Upperboundry_y+i), Quaternion.identity);
+		Instantiate(enemy5Fab, Vector2(-i*1.5,Player_controls.Upperboundry_y+i), Quaternion.identity);
+	}
+}
+
 //--
 
 function Update () {
@@ -76,5 +129,17 @@ function Update () {
 
 	if(!enemyWave2Spawned && Time.time > enemy2SpawnTime){
 		enemy2Wave(1);
+	}
+
+	if(!enemyWave3Spawned && Time.time > enemy3SpawnTime){
+		enemy3Wave(3);
+	}
+
+	if(!enemyWave4Spawned && Time.time > enemy4SpawnTime){
+		enemy4Wave(1);
+	}
+
+	if(!enemyWave5Spawned && Time.time > enemy5SpawnTime){
+		enemy5Wave(3);
 	}
 }
