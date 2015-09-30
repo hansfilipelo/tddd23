@@ -110,8 +110,8 @@ function enemy5Wave(nr : int){
 	enemyWave5Spawned = 1;
 	Instantiate(enemy5Fab, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
 	for(var i = 1; i < nr; i++){
-		Instantiate(enemy5Fab, Vector2(i,Player_controls.Upperboundry_y+i), Quaternion.identity);
-		Instantiate(enemy5Fab, Vector2(-i,Player_controls.Upperboundry_y+i), Quaternion.identity);
+		Instantiate(enemy5Fab, Vector2(i*1.5,Player_controls.Upperboundry_y+i), Quaternion.identity);
+		Instantiate(enemy5Fab, Vector2(-i*1.5,Player_controls.Upperboundry_y+i), Quaternion.identity);
 	}
 }
 
