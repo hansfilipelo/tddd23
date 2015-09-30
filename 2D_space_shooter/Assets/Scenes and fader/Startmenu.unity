@@ -548,7 +548,7 @@ MonoBehaviour:
   deadZone: 0
   Speed: 5
   shootCount: 1
-  life: 0
+  life: 100
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   rb: {fileID: 1308408521}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
