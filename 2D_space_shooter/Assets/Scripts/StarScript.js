@@ -1,4 +1,5 @@
-﻿#pragma strict
+#pragma strict
+import UnityEditor;
 
 var Star1 : Transform;
 var Star2 : Transform;
@@ -14,11 +15,21 @@ internal var nextSpawn : float;
 function Start () {
 	starArray=[Star1,Star2,Star3];
 
+	Debug.Log(Application.loadedLevelName);
 	// Create initial stars
-	for (var y = Player_controls.Lowerboundry_y; y < Player_controls.Upperboundry_y+1; y++) {
-		for (var i = 0; i < Mathf.Floor(Random.Range(spawnStarMin,spawnStarMax)); i++) {
-			Instantiate(starArray[Mathf.Floor(Random.Range(0,starArray.length))], Vector2(Random.Range(Player_controls.Upperboundry_x, Player_controls.Lowerboundry_x),y) , Quaternion.identity);
+	if (Application.loadedLevelName == "Startmenu") {
+		for (var y = Player_controls.Lowerboundry_y; y < Player_controls.Upperboundry_y+1; y++) {
+			for (var i = 0; i < Mathf.Floor(Random.Range(spawnStarMin,spawnStarMax)); i++) {
+				Instantiate(starArray[Mathf.Floor(Random.Range(0,starArray.length))], Vector2(Random.Range(7, -7),y) , Quaternion.identity);
 			}
+		}
+	}
+	else {
+		for (y = Player_controls.Lowerboundry_y; y < Player_controls.Upperboundry_y+1; y++) {
+			for (i = 0; i < Mathf.Floor(Random.Range(spawnStarMin,spawnStarMax)); i++) {
+				Instantiate(starArray[Mathf.Floor(Random.Range(0,starArray.length))], Vector2(Random.Range(Player_controls.Upperboundry_x, Player_controls.Lowerboundry_x),y) , Quaternion.identity);
+			}
+		}
 	}
 }
 
