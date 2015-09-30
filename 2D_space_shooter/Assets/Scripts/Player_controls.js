@@ -76,7 +76,7 @@ function Update () {
 
 		rb.MovePosition(rb.position + Speed * v2 * Time.fixedDeltaTime);
 
-		if(Mathf.Abs(rightTrigger) > 0.2)
+		if(Input.GetButton("Fire1"))
 		{
 			if (shootCount >= 10){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
@@ -114,6 +114,5 @@ function Update () {
 	}
 
   v2 = Vector2(0,0);
-
 	shootCount++;
 }
