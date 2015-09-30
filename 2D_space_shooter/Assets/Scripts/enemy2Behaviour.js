@@ -8,7 +8,7 @@ var direction;
 var life : int;
 var shootCount : int;
 var maxShootCount : int;
-
+var exitTime : float;
 var laser : Transform;
 
 function Start () {
@@ -41,8 +41,10 @@ function shoot(){
 // -------
 
 function Update () {
-
-	if(rb.position[1] < stopAndHoverPos && direction == "right"){
+	if(exitTime<Time.time){
+		rb.MovePosition(rb.position+ Vector2(0,1) * Time.fixedDeltaTime * speed);
+	}
+	else if(rb.position[1] < stopAndHoverPos && direction == "right"){
 		rb.MovePosition(rb.position+ Vector2(1,0) * Time.fixedDeltaTime * speed);
 		if(rb.position[0] > Player_controls.Upperboundry_x-0.5){
 			direction = "left";
@@ -60,7 +62,7 @@ function Update () {
 		rb.MovePosition(rb.position + Vector2(0,-1) * Time.fixedDeltaTime * speed);
 	}
 
-	if(rb.position[1] < Player_controls.Lowerboundry_y){
+	if(rb.position[1] > Player_controls.Upperboundry_y+2){
 		Destroy(this.gameObject);
 	}
 }

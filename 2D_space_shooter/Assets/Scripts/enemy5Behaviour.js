@@ -28,7 +28,7 @@ function hit(damage : int) {
 
 function shoot(){
 	if (shootCount > maxShootCount) {
-		Instantiate(laser, rb.position +Vector2(0,-0.7) , Quaternion.identity);
+		Instantiate(laser, rb.position +Vector2(0,-1) , Quaternion.identity);
 		shootCount = 0;
 	}
 	shootCount++;
