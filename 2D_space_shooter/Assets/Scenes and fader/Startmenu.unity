@@ -156,6 +156,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -532,6 +533,7 @@ MonoBehaviour:
   Speed: 5
   shootCount: 1
   life: 0
+  Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   rb: {fileID: 1308408521}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
   v2: {x: 0, y: 0}

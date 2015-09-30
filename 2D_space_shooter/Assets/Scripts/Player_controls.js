@@ -9,6 +9,7 @@ var Shoot : KeyCode;
 var Speed : float;
 var shootCount : int=0;
 var life : float;
+var Explosion : Transform;
 
 var rb : Rigidbody2D;
 
@@ -25,6 +26,7 @@ function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
 		Destroy(this.gameObject);
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Application.LoadLevel ("Startmenu");
 	}
 }

@@ -8,6 +8,7 @@ var direction;
 var life : int;
 var shootCount : int;
 var maxShootCount : int;
+var Explosion : Transform;
 
 var laser : Transform;
 
@@ -24,6 +25,7 @@ function Start () {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }
