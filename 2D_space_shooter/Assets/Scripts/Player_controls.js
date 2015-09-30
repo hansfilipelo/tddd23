@@ -16,8 +16,8 @@ var deadZone : float;
 var Speed : float;
 var shootCount : int=0;
 var life : float;
-var Explosion : Transform;
 
+var Explosion : Transform;
 var rb : Rigidbody2D;
 
 static var Upperboundry_x : float=3.5;
@@ -45,9 +45,9 @@ function Start(){
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-		Destroy(this.gameObject);
 		Instantiate(Explosion, rb.position, Quaternion.identity);
-		Application.LoadLevel ("Startmenu");
+		Destroy(this.gameObject);
+		Application.LoadLevel("Startmenu");
 	}
 }
 

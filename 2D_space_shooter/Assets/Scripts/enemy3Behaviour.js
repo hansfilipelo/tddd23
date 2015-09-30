@@ -5,6 +5,7 @@ var xMovement : float;
 var Speed : float;
 var movementVector : Vector2;
 var life : int;
+var Explosion : Transform;
 
 function Start () {
 	life = 20;
@@ -16,6 +17,7 @@ function Start () {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }
