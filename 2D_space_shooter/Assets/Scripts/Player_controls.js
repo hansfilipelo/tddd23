@@ -45,7 +45,7 @@ function Start(){
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-		Instantiate(Explosion, rb.position, Quaternion.identity);
+		//Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 		Application.LoadLevel("Startmenu");
 	}
