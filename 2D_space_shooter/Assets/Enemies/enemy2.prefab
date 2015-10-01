@@ -78,7 +78,7 @@ MonoBehaviour:
   life: 0
   shootCount: 0
   maxShootCount: 0
-  exitTime: 30
+  exitTime: 5
   laser: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!212 &21285906
@@ -148,7 +148,7 @@ Prefab:
       objectReference: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
     - target: {fileID: 0}
       propertyPath: exitTime
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Explosion

@@ -18,6 +18,7 @@ function Start () {
 	life = 60;
 	maxShootCount = 40;
 	shootCount = maxShootCount;
+	exitTime += Time.time;
 }
 
 // -------
