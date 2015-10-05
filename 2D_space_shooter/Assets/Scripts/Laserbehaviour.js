@@ -3,7 +3,7 @@
 var rb: Rigidbody2D;
 var hitSound : AudioClip;
 var Speed : float;
-var Explosion : Transform;
+
 
 function hit(damage : int) {
 }
@@ -21,22 +21,15 @@ function Update () {
 function OnCollisionEnter2D(collision : Collision2D) {
 
      	if (collision.gameObject.name=="Playbutton") {
-
-
      		Application.LoadLevel ("Level1");
    		}else if(collision.gameObject.name=="Leaderboard"){
-
-
-
      		Application.LoadLevel ("Leaderboard");
      	}else if(collision.gameObject.name=="Backbutton"){
-
-
      		Application.LoadLevel ("Startmenu");
+     	}else if(collision.gameObject.name=="enemyLaser(Clone)"){
      	}else{
      		AudioSource.PlayClipAtPoint(hitSound, rb.position);
-     		Instantiate(Explosion, rb.position, Quaternion.identity);
-        	collision.gameObject.SendMessage("hit", 10);
-       		Destroy(this.gameObject);
+        collision.gameObject.SendMessage("hit", 10);
+       	Destroy(this.gameObject);
     }
 }

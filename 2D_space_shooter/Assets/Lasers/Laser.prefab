@@ -139,12 +139,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05c5d81b11b7b43ac8fb3de9152fc816, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   rb: {fileID: 5011676}
   hitSound: {fileID: 8300000, guid: 98125ee066ebd48339ab996c2b27cb8a, type: 3}
   Speed: 10
-  Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!212 &21240270
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -156,7 +155,7 @@ SpriteRenderer:
   m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices:
+  m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
   m_ReflectionProbeUsage: 0
@@ -196,16 +195,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_audioClip
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: efd759e83f6644d33a868daaa51b10da, type: 3}
     - target: {fileID: 0}
       propertyPath: hitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 98125ee066ebd48339ab996c2b27cb8a, type: 3}
     - target: {fileID: 0}
       propertyPath: Explosion
-      value:
-      objectReference: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189420}

@@ -10,6 +10,7 @@ var scaler : float;
 var xMovement : float;
 var counterMax : float;
 var life : int;
+var Explosion : Transform;
 
 function Start() {
 	counter=0;
@@ -22,6 +23,7 @@ function Start() {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }

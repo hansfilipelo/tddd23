@@ -76,6 +76,7 @@ MonoBehaviour:
   Speed: 3
   movementVector: {x: 0, y: 0}
   life: 0
+  Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
 --- !u!212 &21251768
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -133,6 +134,10 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 1898445365
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 128050}

@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 var rb: Rigidbody2D;
 var xMovement : float;
@@ -10,6 +10,7 @@ var shootCount : int;
 var maxShootCount : int;
 var exitTime : float;
 var laser : Transform;
+var Explosion : Transform;
 
 function Start () {
 	direction = "right";
@@ -17,6 +18,7 @@ function Start () {
 	life = 60;
 	maxShootCount = 40;
 	shootCount = maxShootCount;
+	exitTime += Time.time;
 }
 
 // -------
@@ -24,6 +26,7 @@ function Start () {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }
