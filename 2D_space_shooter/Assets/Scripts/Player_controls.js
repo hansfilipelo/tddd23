@@ -17,6 +17,7 @@ var Speed : float;
 var shootCount : int=0;
 var life : float;
 
+
 var Explosion : Transform;
 var rb : Rigidbody2D;
 
@@ -29,6 +30,9 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
+function Awake(){
+	DontDestroyOnLoad (this.gameObject);
+}
 function Start(){
 
 	if(Input.GetJoystickNames().length > 0){
@@ -44,12 +48,15 @@ function Start(){
 
 function hit(damage : int) {
 	life -= damage;
-	if (life <= 0) {
-		//Instantiate(Explosion, rb.position, Quaternion.identity);
+		if (life <= 0) {
+		Instantiate(Explosion, rb.position, Quaternion.identity);
+		Debug.Log("död");
 		Destroy(this.gameObject);
-		Application.LoadLevel("Startmenu");
+		Application.LoadLevel ("Startmenu");
 	}
+
 }
+
 
 // -------
 
