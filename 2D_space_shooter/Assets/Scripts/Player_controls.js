@@ -6,7 +6,6 @@ var MoveDown : KeyCode;
 var MoveLeft : KeyCode;
 var MoveRight : KeyCode;
 var Shoot : KeyCode;
-
 var controllerAvail : int;
 var joyX : float;
 var joyY : float;
@@ -30,9 +29,13 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
+//var player : PlayerScript;
+
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
 }
+
+
 function Start(){
 
 	if(Input.GetJoystickNames().length > 0){
@@ -42,6 +45,10 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
+	
+
+    // By tag
+    var player = GameObject.FindWithTag("Player");
 }
 
 // -------
@@ -50,9 +57,9 @@ function hit(damage : int) {
 	life -= damage;
 		if (life <= 0) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
-		Debug.Log("död");
 		Destroy(this.gameObject);
-		Application.LoadLevel ("Startmenu");
+		var player = GameObject.Find("Player");
+		player.GetComponent(PlayerScript).Death();
 	}
 
 }

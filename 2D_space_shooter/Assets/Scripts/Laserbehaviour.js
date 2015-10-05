@@ -29,7 +29,7 @@ function OnCollisionEnter2D(collision : Collision2D) {
      	}else if(collision.gameObject.name=="enemyLaser(Clone)"){
      	}else{
      		AudioSource.PlayClipAtPoint(hitSound, rb.position);
-        collision.gameObject.SendMessage("hit", 10);
-       	Destroy(this.gameObject);
+        	collision.gameObject.SendMessage("hit", 10);
+       		Destroy(this.gameObject);
     }
 }
