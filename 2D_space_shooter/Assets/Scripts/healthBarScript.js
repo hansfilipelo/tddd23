@@ -7,7 +7,7 @@ function Start(){
   var currPlup : Transform;
   healthArray = [];
   for (var i = 0; i < 100; i++) {
-    currPlup = Instantiate(this.healthPlup, Vector2(0.02,0.05+0.004*i), Quaternion.identity);
+    currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.03+0.004*i), Quaternion.identity);
     healthArray.Push(currPlup.gameObject);
   }
 }
