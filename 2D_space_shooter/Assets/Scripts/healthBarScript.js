@@ -6,7 +6,7 @@ var healthPlup : Transform;
 function Start(){
   var currPlup : Transform;
   for (var i = 0; i < 100; i++) {
-    currPlup = Instantiate(healthPlup, Vector2(Player_controls.Lowerboundry_x+0.1*i,Player_controls.Lowerboundry_y+0.1), Quaternion.identity);
+    currPlup = Instantiate(this.healthPlup, Vector2(Player_controls.Lowerboundry_x+0.1*i,Player_controls.Lowerboundry_y+0.1), Quaternion.identity);
     Debug.Log(currPlup.ToString());
     healthArray.Push(currPlup.gameObject);
   }
