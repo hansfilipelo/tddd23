@@ -47,6 +47,7 @@ function Start(){
 
 function hit(damage : int) {
 	life -= damage;
+	healthBar.gameObject.SendMessage("removeLife",damage);
 	if (life <= 0) {
 		//Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
