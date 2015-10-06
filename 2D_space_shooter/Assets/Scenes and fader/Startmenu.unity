@@ -156,7 +156,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -272,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 718901933}
-  PlayerLife: 0
+  PlayerLife: 3
   PlayerShip: {fileID: 445272, guid: 25896dfca4dad477682fe944aad2e781, type: 2}
 --- !u!4 &718901932
 Transform:
