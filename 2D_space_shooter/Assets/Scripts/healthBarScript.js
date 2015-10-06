@@ -2,19 +2,25 @@
 
 var healthArray : Array;
 var healthPlup : Transform;
+var lifeArray : Array;
 
 function Start(){
   var currPlup : Transform;
   healthArray = [];
+  lifeArray = [];
   for (var i = 0; i < 100; i++) {
     currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.03+0.004*i), Quaternion.identity);
     healthArray.Push(currPlup.gameObject);
+  }
+  for (var it = 0; it < 3; it++) {
+    currPlup = Instantiate(this.healthPlup, Vector2(0.05,0.03+0.005*i), Quaternion.identity);
+    lifeArray.Push(currPlup.gameObject);
   }
 }
 
 // ------
 
-function removeLife(damage : int){
+function removeHealth(damage : int){
   for (var i = 0; i < damage; i++) {
     Destroy(healthArray.Pop());
   }
@@ -22,7 +28,7 @@ function removeLife(damage : int){
 
 // ------
 
-function addLife(life : int){
+function addHealth(life : int){
   for (var i = 0; i < life; i++) {
     if (healthArray.length >= 100) {
       break;
