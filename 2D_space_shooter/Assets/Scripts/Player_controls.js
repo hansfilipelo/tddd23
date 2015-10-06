@@ -45,10 +45,9 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
-	
 
-    // By tag
-    var player = GameObject.FindWithTag("Player");
+
+    
 }
 
 // -------

@@ -18,7 +18,7 @@ function Death(){
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
 	}else{
-		Application.LoadLevel ("Level1");
+		Application.LoadLevel (Application.loadedLevel);
 		var clone : Transform=Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
 		}
