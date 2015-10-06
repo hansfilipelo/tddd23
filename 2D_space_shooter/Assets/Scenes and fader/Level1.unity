@@ -170,7 +170,7 @@ MonoBehaviour:
   Speed: 5
   shootCount: 10
   life: 100
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
   Explosion: {fileID: 0}
   rb: {fileID: 223828009}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
@@ -319,48 +319,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1001 &1014455032
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1445404133
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,53 +575,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!1 &1850742798
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1850742800}
-  - 131: {fileID: 1850742799}
-  m_Layer: 0
-  m_Name: healthBarPlup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!131 &1850742799
-GUITexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1850742798}
-  m_Enabled: 1
-  m_Texture: {fileID: 2800000, guid: 92b6f48be56b34da1b75184247d67159, type: 3}
-  m_Color: {r: .5, g: .5, b: .5, a: .5}
-  m_PixelInset:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  m_LeftBorder: 0
-  m_RightBorder: 0
-  m_TopBorder: 0
-  m_BottomBorder: 0
---- !u!4 &1850742800
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1850742798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .100000001, y: .200000003, z: 0}
-  m_LocalScale: {x: .0199999996, y: .00499999989, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
 --- !u!1 &1996892121
 GameObject:
   m_ObjectHideFlags: 0

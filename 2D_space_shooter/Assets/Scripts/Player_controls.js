@@ -41,7 +41,7 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
-	Instantiate(healthBar);
+	healthBar = Instantiate(healthBar);
 }
 
 // -------
