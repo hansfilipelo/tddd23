@@ -98,7 +98,7 @@ MonoBehaviour:
   Speed: 5
   shootCount: 10
   life: 100
-  healthBar: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
+  healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
   Explosion: {fileID: 0}
   rb: {fileID: 5061346}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
@@ -139,7 +139,8 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 431710, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
+      objectReference: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110672}
