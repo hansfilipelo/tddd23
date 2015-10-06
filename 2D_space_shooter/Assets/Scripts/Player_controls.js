@@ -16,6 +16,7 @@ var deadZone : float;
 var Speed : float;
 var shootCount : int=0;
 var life : float;
+var healthBar : Transform;
 
 var Explosion : Transform;
 var rb : Rigidbody2D;
@@ -29,6 +30,8 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
+// -----
+
 function Start(){
 
 	if(Input.GetJoystickNames().length > 0){
@@ -38,6 +41,7 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
+	Instantiate(healthBar);
 }
 
 // -------
