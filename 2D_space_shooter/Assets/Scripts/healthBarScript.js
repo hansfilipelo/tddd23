@@ -5,6 +5,8 @@ var healthPlup : Transform;
 var lifeArray : Array;
 var divisor : int = 4;
 var distanceBetweenPlup : float = 0.02;
+var boostSound : AudioClip;
+var removeSound : AudioClip;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
@@ -15,6 +17,7 @@ function Start(){
   healthArray = [];
   lifeArray = [];
 
+	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   for (var i = 0; i < 100/divisor; i++) {
     currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity);
     healthArray.Push(currPlup.gameObject);
@@ -31,6 +34,7 @@ function Start(){
 // ------
 
 function removeHealth(damage : int){
+	AudioSource.PlayClipAtPoint(removeSound,Vector2(0,0));
   damage = damage/divisor;
   for (var i = 0; i < damage; i++) {
     if (healthArray.length <= 0) {
@@ -44,6 +48,7 @@ function removeHealth(damage : int){
 // ------
 
 function addHealth(life : int){
+	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   life = life/divisor;
   for (var i = 0; i < life; i++) {
     if (healthArray.length >= 100/divisor) {
@@ -67,6 +72,7 @@ function clearBar(){
 
 function restoreHealth(){
 	yield WaitForSeconds(0.5);
+	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   var i = 0;
   while (healthArray.length < 100/divisor){
     if (i >= healthArray.length){

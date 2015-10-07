@@ -29,6 +29,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPlup: {fileID: 424756, guid: a4c2297e393e54406942d2b17a554bb5, type: 2}
+  divisor: 2
+  distanceBetweenPlup: .00999999978
+  boostSound: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
+  removeSound: {fileID: 8300000, guid: a2afe7c0841ae4ad686955140b6c7852, type: 3}
 --- !u!222 &22217030
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -100,6 +104,14 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -260
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: removeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a2afe7c0841ae4ad686955140b6c7852, type: 3}
+    - target: {fileID: 0}
+      propertyPath: boostSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124764}
