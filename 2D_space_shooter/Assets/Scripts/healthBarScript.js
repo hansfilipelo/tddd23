@@ -3,7 +3,8 @@
 var healthArray : Array;
 var healthPlup : Transform;
 var lifeArray : Array;
-var divisor : int = 2;
+var divisor : int = 4;
+var distanceBetweenPlup : float = 0.02;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
@@ -15,7 +16,7 @@ function Start(){
   lifeArray = [];
 
   for (var i = 0; i < 100/divisor; i++) {
-    currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity);
+    currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity);
     healthArray.Push(currPlup.gameObject);
     yield WaitForSeconds(0.02);
   }
@@ -48,7 +49,7 @@ function addHealth(life : int){
     if (healthArray.length >= 100/divisor) {
       break;
     }
-    healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
+    healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity).gameObject);
     yield WaitForSeconds(0.02);
   }
 
@@ -65,10 +66,11 @@ function clearBar(){
 // -------
 
 function restoreHealth(){
+	yield WaitForSeconds(0.5);
   var i = 0;
   while (healthArray.length < 100/divisor){
     if (i >= healthArray.length){
-      healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
+      healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity).gameObject);
       yield WaitForSeconds(0.02);
     }
     i++;
