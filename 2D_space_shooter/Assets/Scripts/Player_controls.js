@@ -19,6 +19,7 @@ var life : float;
 
 var Explosion : Transform;
 var rb : Rigidbody2D;
+var healthBar : Transform;
 
 static var Upperboundry_x : float=3.5;
 static var Upperboundry_y : float=5;
@@ -45,18 +46,23 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
-	healthBar = Instantiate(healthBar);
+}
+
+// -------
+
+function setHealthBar(bar : Transform){
+	healthBar = bar;
 }
 
 // -------
 
 function hit(damage : int) {
 	life -= damage;
-	healthBar.gameObject.SendMessage("removeLife",damage);
+	healthBar.gameObject.SendMessage("removeHealth",damage);
 	if (life <= 0) {
-		//Instantiate(Explosion, rb.position, Quaternion.identity);
-		Destroy(this.gameObject);
-		Application.LoadLevel("Startmenu");
+		Instantiate(Explosion, rb.position, Quaternion.identity);
+		var player = GameObject.Find("Player");
+		player.GetComponent(PlayerScript).Death();
 	}
 }
 
