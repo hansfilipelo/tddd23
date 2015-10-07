@@ -66,6 +66,13 @@ function hit(damage : int) {
 	}
 }
 
+// ------
+
+function restoreHealth(){
+	life = 100;
+	healthBar.SendMessage("restoreHealth");
+}
+
 // -------
 
 function Update () {

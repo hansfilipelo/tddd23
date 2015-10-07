@@ -320,6 +320,10 @@ MonoBehaviour:
   enemy5SpawnTime: 0
   enemyWave5Time: 34
   enemyWave5Spawned: 0
+  healthPowerUp: {fileID: 493022, guid: 0dbb5d11367764dc2beef602cc728903, type: 2}
+  healthPowerUpSpawnTime: 0
+  healthPowerUpTime: 40
+  healthPowerUpSpawned: 0
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0

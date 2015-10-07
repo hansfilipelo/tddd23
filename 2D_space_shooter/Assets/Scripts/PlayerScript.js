@@ -32,6 +32,7 @@ function Death(){
 		clone.name = "Player ship";
 		clone.SendMessage("Start");
 		clone.SendMessage("setHealthBar",healthBar);
+		healthBar.SendMessage("clearBar");
 		healthBar.SendMessage("restoreHealth");
 		}
 }

@@ -531,7 +531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453072, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11491260, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: fadeSpeed

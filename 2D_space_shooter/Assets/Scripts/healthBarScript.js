@@ -56,18 +56,22 @@ function addHealth(life : int){
 
 // -------
 
-function restoreHealth(){
-
+function clearBar(){
   for (var it = 0; it < healthArray.length; it++) {
     Destroy(healthArray.Pop());
   }
+}
 
-  yield WaitForSeconds(1);
+// -------
+
+function restoreHealth(){
   var i = 0;
   while (healthArray.length < 100/divisor){
-    healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
+    if (i >= healthArray.length){
+      healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
+      yield WaitForSeconds(0.1);
+    }
     i++;
-    yield WaitForSeconds(0.1);
   }
 }
 
