@@ -1,3 +1,4 @@
+﻿
 #pragma strict
 
 var MoveUp : KeyCode;
@@ -15,7 +16,6 @@ var deadZone : float;
 var Speed : float;
 var shootCount : int=0;
 var life : float;
-var healthBar : Transform;
 
 var Explosion : Transform;
 var rb : Rigidbody2D;
@@ -29,7 +29,12 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
-// -----
+//var player : PlayerScript;
+
+function Awake(){
+	DontDestroyOnLoad (this.gameObject);
+}
+
 
 function Start(){
 
