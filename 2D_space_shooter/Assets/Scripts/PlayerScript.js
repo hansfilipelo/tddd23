@@ -31,8 +31,8 @@ function Death(){
 		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
 		clone.SendMessage("Start");
-		healthBar.SendMessage("addLife",100);
 		clone.SendMessage("setHealthBar",healthBar);
+		healthBar.SendMessage("restoreHealth");
 		}
 }
 
