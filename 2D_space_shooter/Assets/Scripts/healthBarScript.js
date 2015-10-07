@@ -17,7 +17,7 @@ function Start(){
   for (var i = 0; i < 100/divisor; i++) {
     currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity);
     healthArray.Push(currPlup.gameObject);
-    yield WaitForSeconds(0.05);
+    yield WaitForSeconds(0.02);
   }
 
 /*  for (var it = 0; it < 3; it++) {
@@ -36,7 +36,7 @@ function removeHealth(damage : int){
       break;
     }
     Destroy(healthArray.Pop());
-    yield WaitForSeconds(0.05);
+    yield WaitForSeconds(0.02);
   }
 }
 
@@ -49,7 +49,7 @@ function addHealth(life : int){
       break;
     }
     healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
-    yield WaitForSeconds(0.05);
+    yield WaitForSeconds(0.02);
   }
 
 }
@@ -69,7 +69,7 @@ function restoreHealth(){
   while (healthArray.length < 100/divisor){
     if (i >= healthArray.length){
       healthArray.Push(Instantiate(this.healthPlup, Vector2(0.015,0.05+0.005*i), Quaternion.identity).gameObject);
-      yield WaitForSeconds(0.1);
+      yield WaitForSeconds(0.02);
     }
     i++;
   }
