@@ -273,6 +273,8 @@ MonoBehaviour:
   rb: {fileID: 718901933}
   PlayerLife: 3
   PlayerShip: {fileID: 445272, guid: 25896dfca4dad477682fe944aad2e781, type: 2}
+  healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
+  clone: {fileID: 0}
 --- !u!4 &718901932
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!50 &718901933
 Rigidbody2D:
   serializedVersion: 2
@@ -529,7 +531,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453072, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11491260, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: fadeSpeed
@@ -736,7 +738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &2126852852
 GameObject:
   m_ObjectHideFlags: 0

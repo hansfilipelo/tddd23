@@ -30,6 +30,11 @@ var enemy5SpawnTime : float;
 var enemyWave5Time : float;
 var enemyWave5Spawned : int;
 
+var healthPowerUp : Transform;
+var healthPowerUpSpawnTime : float;
+var healthPowerUpTime : float;
+var healthPowerUpSpawned : int;
+
 function Start () {
 
 	// Set up scenes outer edges
@@ -56,6 +61,9 @@ function Start () {
 
 	enemyWave5Spawned = 0;
 	enemy5SpawnTime = Time.time + enemyWave5Time;
+
+	healthPowerUpSpawned = 0;
+	healthPowerUpSpawnTime = Time.time + healthPowerUpTime;
 }
 
 
@@ -115,6 +123,13 @@ function enemy5Wave(nr : int){
 	}
 }
 
+// ------
+
+function healthPowerUpWave(){
+	healthPowerUpSpawned = 1;
+	Instantiate(healthPowerUp, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
+}
+
 //--
 
 function Update () {
@@ -141,5 +156,9 @@ function Update () {
 
 	if(!enemyWave5Spawned && Time.time > enemy5SpawnTime){
 		enemy5Wave(3);
+	}
+
+	if(!healthPowerUpSpawned && Time.time > healthPowerUpSpawnTime){
+		healthPowerUpWave();
 	}
 }

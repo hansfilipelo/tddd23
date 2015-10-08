@@ -2,14 +2,22 @@
 var rb : Rigidbody2D;
 var PlayerLife : float;
 var PlayerShip : Transform;
+var healthBar : Transform;
+var clone : Transform;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
 }
 
 function Start () {
-		var clone : Transform=Instantiate(PlayerShip, rb.position, Quaternion.identity);
+		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
+}
+
+function setHealthBar(){
+	yield WaitForSeconds(0.7);
+	healthBar = Instantiate(healthBar);
+	clone.SendMessage("setHealthBar",healthBar);
 }
 
 function Death(){
@@ -19,8 +27,13 @@ function Death(){
 		Application.LoadLevel ("Startmenu");
 	}else{
 		Application.LoadLevel (Application.loadedLevel);
-		var clone : Transform=Instantiate(PlayerShip, rb.position, Quaternion.identity);
+		Destroy(clone.gameObject);
+		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
+		clone.SendMessage("Start");
+		clone.SendMessage("setHealthBar",healthBar);
+		healthBar.SendMessage("clearBar");
+		healthBar.SendMessage("restoreHealth");
 		}
 }
 

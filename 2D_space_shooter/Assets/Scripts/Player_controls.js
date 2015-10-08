@@ -6,6 +6,7 @@ var MoveDown : KeyCode;
 var MoveLeft : KeyCode;
 var MoveRight : KeyCode;
 var Shoot : KeyCode;
+
 var controllerAvail : int;
 var joyX : float;
 var joyY : float;
@@ -16,9 +17,9 @@ var Speed : float;
 var shootCount : int=0;
 var life : float;
 
-
 var Explosion : Transform;
 var rb : Rigidbody2D;
+var healthBar : Transform;
 
 static var Upperboundry_x : float=3.5;
 static var Upperboundry_y : float=5;
@@ -45,24 +46,32 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
+}
 
+// -------
 
-    
+function setHealthBar(bar : Transform){
+	healthBar = bar;
 }
 
 // -------
 
 function hit(damage : int) {
 	life -= damage;
-		if (life <= 0) {
+	healthBar.gameObject.SendMessage("removeHealth",damage);
+	if (life <= 0) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
-		Destroy(this.gameObject);
 		var player = GameObject.Find("Player");
 		player.GetComponent(PlayerScript).Death();
 	}
-
 }
 
+// ------
+
+function restoreHealth(){
+	life = 100;
+	healthBar.SendMessage("restoreHealth");
+}
 
 // -------
 
