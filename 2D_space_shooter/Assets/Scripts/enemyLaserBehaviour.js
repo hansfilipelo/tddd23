@@ -2,6 +2,11 @@
 
 var rb: Rigidbody2D;
 var Speed : float;
+var pewSound : AudioClip;
+
+function Start(){
+	AudioSource.PlayClipAtPoint(pewSound,Vector2(0,0));
+}
 
 function hit(damage : int) {
 }
