@@ -162,7 +162,7 @@ function Update () {
 	}
 
 	if(!enemyWave3Spawned && Time.time > enemy3SpawnTime){
-		enemy3Wave(3);
+		enemy3Wave(2);
 	}
 
 	if(!enemyWave4Spawned && Time.time > enemy4SpawnTime){
@@ -170,7 +170,7 @@ function Update () {
 	}
 
 	if(!enemyWave5Spawned && Time.time > enemy5SpawnTime){
-		enemy5Wave(3);
+		enemy5Wave(2);
 	}
 
 	if(!healthPowerUpSpawned && Time.time > healthPowerUpSpawnTime){

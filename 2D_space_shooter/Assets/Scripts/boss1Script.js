@@ -65,14 +65,24 @@ function shoot(){
 function Update () {
 
 	if(direction == "right"){
-		moveBody(Vector2.right, speed);
+    if (this.getPosition()[0] < Player_controls.Lowerboundry_x+1) {
+      moveBody(Vector2.right, speed);
+    }
+    else {
+      moveBody(Vector2.right, speed*0.1);
+    }
 		if(this.getPosition()[0] > Player_controls.Upperboundry_x-0.5){
 			direction = "left";
 		}
 	}
 	else{
-		moveBody(Vector2.left, speed);
-		if(this.getPosition()[0] < Player_controls.Lowerboundry_x+0.5){
+    if (this.getPosition()[0] > Player_controls.Upperboundry_x-1) {
+      moveBody(Vector2.left, speed);
+    }
+    else {
+      moveBody(Vector2.left, speed*0.1);
+    }
+		if(this.getPosition()[0] < Player_controls.Lowerboundry_x+1){
 			direction = "right";
 		}
 	}
