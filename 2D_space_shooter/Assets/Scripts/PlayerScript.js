@@ -5,6 +5,7 @@ var PlayerShip : Transform;
 var healthBar : Transform;
 var clone : Transform;
 var myScore : int = 0;
+var scoreText : GUIText;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
@@ -21,6 +22,7 @@ function Start () {
 
 function setHealthBar(){
 	yield WaitForSeconds(0.7);
+	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
 	healthBar = Instantiate(healthBar);
 	clone.SendMessage("setHealthBar",healthBar);
 }
@@ -29,6 +31,7 @@ function setHealthBar(){
 
 function score(nr : int){
 	myScore += nr;
+	scoreText.text = "Score: " + myScore;
 }
 
 // --------
