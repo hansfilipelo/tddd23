@@ -9,6 +9,8 @@ var shootCount : int;
 var maxShootCount : int;
 var yMovement : float;
 var Explosion : Transform;
+var player : GameObject;
+var score = 20;
 
 var laser : Transform;
 
@@ -18,6 +20,7 @@ function Start () {
 	maxShootCount = 40;
 	shootCount = maxShootCount;
   yMovement = -0.3;
+	player = GameObject.Find("Player");
 }
 
 // -------
@@ -25,6 +28,7 @@ function Start () {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		player.SendMessage("score",score);
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}

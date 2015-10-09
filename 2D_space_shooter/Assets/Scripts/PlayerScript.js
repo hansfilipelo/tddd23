@@ -4,21 +4,34 @@ var PlayerLife : float;
 var PlayerShip : Transform;
 var healthBar : Transform;
 var clone : Transform;
+var myScore : int = 0;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
 }
+
+// --------
 
 function Start () {
 		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
 }
 
+// --------
+
 function setHealthBar(){
 	yield WaitForSeconds(0.7);
 	healthBar = Instantiate(healthBar);
 	clone.SendMessage("setHealthBar",healthBar);
 }
+
+// --------
+
+function score(nr : int){
+	myScore += nr;
+}
+
+// --------
 
 function Death(){
 	PlayerLife-=1;
