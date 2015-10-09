@@ -1,5 +1,5 @@
 ﻿#pragma strict
-var rb: Rigidbody2D;
+var rb : Component[];
 var xMovement : float;
 var speed : float;
 var direction;
@@ -11,13 +11,32 @@ var Explosion : Transform;
 
 var laser : Transform;
 
+// -------
+
+function moveBody(direction : Vector2, force : float){
+  for (var i = 0; i < rb.length; i++) {
+    var rbTemp : Rigidbody2D=rb[i];
+    rbTemp.AddForce(direction * force);
+  }
+}
+
+// -------
+
+function getPosition() : Vector2{
+  var rbTemp : Rigidbody2D=rb[0];
+  return rbTemp.position;
+}
+
+//--------
+
 function Start () {
 	direction = "right";
 	life = 200;
 	maxShootCount = 30;
 	shootCount = maxShootCount;
-  yMovement = 3;
-  speed = 4;
+  yMovement = 2;
+  speed = 2;
+  rb = this.GetComponentsInChildren(Rigidbody2D);
 }
 
 // -------
@@ -25,7 +44,7 @@ function Start () {
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-		Instantiate(Explosion, rb.position, Quaternion.identity);
+		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }
@@ -34,8 +53,8 @@ function hit(damage : int) {
 
 function shoot(){
 	if (shootCount > maxShootCount) {
-		Instantiate(laser, rb.position +Vector2(1.26,-1) , Quaternion.identity);
-    Instantiate(laser, rb.position +Vector2(-1.26,-1) , Quaternion.identity);
+		Instantiate(laser, this.getPosition() +Vector2(1.26,-1) , Quaternion.identity);
+    Instantiate(laser, this.getPosition() +Vector2(-1.26,-1) , Quaternion.identity);
 		shootCount = 0;
 	}
 	shootCount++;
@@ -46,28 +65,28 @@ function shoot(){
 function Update () {
 
 	if(direction == "right"){
-		rb.MovePosition(rb.position+ Vector2(1,0) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] > Player_controls.Upperboundry_x-0.5){
+		moveBody(Vector2.right, speed);
+		if(this.getPosition()[0] > Player_controls.Upperboundry_x-0.5){
 			direction = "left";
 		}
 	}
 	else{
-		rb.MovePosition(rb.position+ Vector2(-1,0) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] < Player_controls.Lowerboundry_x+0.5){
+		moveBody(Vector2.left, speed);
+		if(this.getPosition()[0] < Player_controls.Lowerboundry_x+0.5){
 			direction = "right";
 		}
 	}
 
-  if (rb.position[1] < 0.5) {
-    rb.MovePosition(rb.position+ Vector2.up * Time.fixedDeltaTime * yMovement);;
+  if (this.getPosition()[1] < 0.5) {
+    moveBody(Vector2.up, yMovement);
   }
   else {
-    rb.MovePosition(rb.position+ Vector2.down * Time.fixedDeltaTime * yMovement);;
+    moveBody(Vector2.down, yMovement);
   }
 
   shoot();
 
-	if(rb.position[1] < Player_controls.Lowerboundry_y){
+	if(this.getPosition()[1] < Player_controls.Lowerboundry_y){
 		Destroy(this.gameObject);
 	}
 }

@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
-  meteorWaveSpawn: 46
+  meteorWaveSpawn: 2
   meteorSpawnTime: 0
   meteorsSpawned: 0
   enemy1Fab: {fileID: 491806, guid: 8d16f26fea28c48c1bf2119a41cf1402, type: 2}
@@ -324,9 +324,9 @@ MonoBehaviour:
   healthPowerUpSpawnTime: 0
   healthPowerUpTime: 40
   healthPowerUpSpawned: 0
-  boss1: {fileID: 438792, guid: fcd221f73ee724674917ef0ab8f21b8c, type: 2}
+  boss1: {fileID: 455312, guid: f876b047600fd48d590cb010d82540d6, type: 2}
   boss1SpawnTime: 0
-  boss1Time: 2
+  boss1Time: 46
   boss1Spawned: 0
 --- !u!4 &598655525
 Transform:
