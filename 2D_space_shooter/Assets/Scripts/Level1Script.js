@@ -135,7 +135,7 @@ function enemy5Wave(nr : int){
 
 function boss1Wave(){
 	boss1Spawned = 1;
-	Instantiate(boss1, Vector2(0,0), Quaternion.identity);
+	Instantiate(boss1, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
 }
 
 // ------

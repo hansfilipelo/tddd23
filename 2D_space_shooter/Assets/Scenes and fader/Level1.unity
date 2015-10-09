@@ -264,7 +264,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 453072, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3018b1770060d4253822c16565fd0a0d, type: 2}
@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
-  meteorWaveSpawn: 0
-  meteorSpawnTime: 46
+  meteorWaveSpawn: 46
+  meteorSpawnTime: 0
   meteorsSpawned: 0
   enemy1Fab: {fileID: 491806, guid: 8d16f26fea28c48c1bf2119a41cf1402, type: 2}
   enemy1SpawnTime: 0
