@@ -1,4 +1,6 @@
 ﻿#pragma strict
+
+
 var rb : Rigidbody2D;
 var PlayerLife : float;
 var PlayerShip : Transform;
@@ -35,11 +37,35 @@ function score(nr : int){
 	scoreText.text = "Score: " + myScore;
 }
 
+// -----
+
+function loadHighScore(){
+	if (PlayerPrefs.HasKey("highScore")) {
+		return PlayerPrefs.GetInt("highScore");
+	}
+
+	return 0;
+}
+
+// -----
+
+function saveScore(name, score : int){
+	var currHighScore = this.loadHighScore();
+
+	if (score > currHighScore) {
+		PlayerPrefs.SetInt("highScore",score);
+		PlayerPrefs.SetString("highScoreName",name);
+	}
+
+	PlayerPrefs.Save();
+}
+
 // --------
 
 function Death(){
 	PlayerLife-=1;
 	if (PlayerLife<=0){
+		this.saveScore("Gustaf",myScore);
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
 	}else{
@@ -51,6 +77,8 @@ function Death(){
 		this.SendMessage("setHealthBar");
 		}
 }
+
+// -------
 
 function Update () {
 
