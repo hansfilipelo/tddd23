@@ -39,9 +39,17 @@ function score(nr : int){
 
 // -----
 
-function loadHighScore(){
-	if (PlayerPrefs.HasKey("highScore")) {
-		return PlayerPrefs.GetInt("highScore");
+function loadHighScore(pos : int){
+	if (PlayerPrefs.HasKey("highScore" + pos)) {
+		return PlayerPrefs.GetInt("highScore" + pos);
+	}
+
+	return 0;
+}
+
+function loadHighScoreName(name, it : int){
+	if (PlayerPrefs.HasKey("highScoreName" + it)) {
+		return PlayerPrefs.GetInt("highScoreName" + it);
 	}
 
 	return 0;
@@ -49,12 +57,19 @@ function loadHighScore(){
 
 // -----
 
-function saveScore(name, score : int){
-	var currHighScore = this.loadHighScore();
+function saveScore(name, score : int, it : int){
 
-	if (score > currHighScore) {
-		PlayerPrefs.SetInt("highScore",score);
-		PlayerPrefs.SetString("highScoreName",name);
+	while (it < 10) {
+		var currHighScore = this.loadHighScore(it);
+		var currHighScoreName = this.loadHighScoreName(name,it);
+
+		if (score > currHighScore) {
+			this.saveScore(currHighScoreName,currHighScore,it);
+			PlayerPrefs.SetInt("highScore" + it,score);
+			PlayerPrefs.SetString("highScoreName" + it,name);
+			break;
+		}
+		it++;
 	}
 
 	PlayerPrefs.Save();
@@ -65,7 +80,7 @@ function saveScore(name, score : int){
 function Death(){
 	PlayerLife-=1;
 	if (PlayerLife<=0){
-		this.saveScore("Gustaf",myScore);
+		this.saveScore("Gustaf",myScore,0);
 		Destroy(clone.gameObject);
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
