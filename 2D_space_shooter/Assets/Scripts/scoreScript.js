@@ -15,7 +15,7 @@ function setText(newText){
 // -----
 
 function setScore(score : int){
-  this.setText("score: " + score);
+  this.setText("Score: " + score);
 }
 
 function Start () {

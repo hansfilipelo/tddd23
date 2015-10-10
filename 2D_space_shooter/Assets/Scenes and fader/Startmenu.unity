@@ -276,6 +276,7 @@ MonoBehaviour:
   healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
   clone: {fileID: 0}
   myScore: 0
+  scoreText: {fileID: 0}
 --- !u!4 &718901932
 Transform:
   m_ObjectHideFlags: 0

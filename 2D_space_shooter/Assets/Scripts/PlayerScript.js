@@ -23,6 +23,7 @@ function Start () {
 function setHealthBar(){
 	yield WaitForSeconds(0.7);
 	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
+	this.score(0);
 	healthBar = Instantiate(healthBar);
 	clone.SendMessage("setHealthBar",healthBar);
 }
@@ -47,9 +48,7 @@ function Death(){
 		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
 		clone.SendMessage("Start");
-		clone.SendMessage("setHealthBar",healthBar);
-		healthBar.SendMessage("clearBar");
-		healthBar.SendMessage("restoreHealth");
+		this.SendMessage("setHealthBar");
 		}
 }
 
