@@ -82,6 +82,27 @@ function saveScore(name, score : int, it : int){
 
 // --------
 
+function setScoreBoard(){
+	var leaderBoardText = "Highscore \n";
+	leaderBoardText += "---------\n\n";
+
+	var name;
+	var score;
+
+	for (var i = 0; i < 10; i++) {
+		name = this.loadHighScoreName(i);
+		score = this.loadHighScore(i);
+
+		leaderBoardText += name + "  " + score + "\n";
+	}
+
+
+	Debug.Log(leaderBoardText);
+	GameObject.Find("leaderBoard").SendMessage("setLeaderBoard",leaderBoardText);
+}
+
+// --------
+
 function Death(){
 	PlayerLife-=1;
 	if (PlayerLife<=0){
