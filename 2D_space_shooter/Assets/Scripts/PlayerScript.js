@@ -66,6 +66,7 @@ function Death(){
 	PlayerLife-=1;
 	if (PlayerLife<=0){
 		this.saveScore("Gustaf",myScore);
+		Destroy(clone.gameObject);
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
 	}else{
