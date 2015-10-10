@@ -47,12 +47,11 @@ function loadHighScore(pos : int){
 	return 0;
 }
 
-function loadHighScoreName(name, it : int){
+function loadHighScoreName(it : int){
 	if (PlayerPrefs.HasKey("highScoreName" + it)) {
-		return PlayerPrefs.GetInt("highScoreName" + it);
+		return PlayerPrefs.GetString("highScoreName" + it);
 	}
-
-	return 0;
+	return "none";
 }
 
 // -----
@@ -61,7 +60,13 @@ function saveScore(name, score : int, it : int){
 
 	while (it < 10) {
 		var currHighScore = this.loadHighScore(it);
-		var currHighScoreName = this.loadHighScoreName(name,it);
+		var currHighScoreName = this.loadHighScoreName(it);
+
+		if (currHighScoreName == "none") {
+			PlayerPrefs.SetInt("highScore" + it,score);
+			PlayerPrefs.SetString("highScoreName" + it,name);
+			break;
+		}
 
 		if (score > currHighScore) {
 			this.saveScore(currHighScoreName,currHighScore,it);
