@@ -35,6 +35,11 @@ var healthPowerUpSpawnTime : float;
 var healthPowerUpTime : float;
 var healthPowerUpSpawned : int;
 
+var boss1 : Transform;
+var boss1SpawnTime : float;
+var boss1Time : float;
+var boss1Spawned : int;
+
 function Start () {
 
 	// Set up scenes outer edges
@@ -64,6 +69,9 @@ function Start () {
 
 	healthPowerUpSpawned = 0;
 	healthPowerUpSpawnTime = Time.time + healthPowerUpTime;
+
+	boss1Spawned = 0;
+	boss1SpawnTime = Time.time + boss1Time;
 }
 
 
@@ -123,6 +131,13 @@ function enemy5Wave(nr : int){
 	}
 }
 
+// ---
+
+function boss1Wave(){
+	boss1Spawned = 1;
+	Instantiate(boss1, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
+}
+
 // ------
 
 function healthPowerUpWave(){
@@ -147,7 +162,7 @@ function Update () {
 	}
 
 	if(!enemyWave3Spawned && Time.time > enemy3SpawnTime){
-		enemy3Wave(3);
+		enemy3Wave(2);
 	}
 
 	if(!enemyWave4Spawned && Time.time > enemy4SpawnTime){
@@ -155,10 +170,14 @@ function Update () {
 	}
 
 	if(!enemyWave5Spawned && Time.time > enemy5SpawnTime){
-		enemy5Wave(3);
+		enemy5Wave(2);
 	}
 
 	if(!healthPowerUpSpawned && Time.time > healthPowerUpSpawnTime){
 		healthPowerUpWave();
+	}
+
+	if(!boss1Spawned && Time.time > boss1SpawnTime){
+		boss1Wave();
 	}
 }

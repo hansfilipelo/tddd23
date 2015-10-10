@@ -275,6 +275,8 @@ MonoBehaviour:
   PlayerShip: {fileID: 445272, guid: 25896dfca4dad477682fe944aad2e781, type: 2}
   healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
   clone: {fileID: 0}
+  myScore: 0
+  scoreText: {fileID: 0}
 --- !u!4 &718901932
 Transform:
   m_ObjectHideFlags: 0
