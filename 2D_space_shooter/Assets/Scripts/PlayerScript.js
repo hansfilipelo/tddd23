@@ -83,9 +83,7 @@ function saveScore(name, score : int, it : int){
 // --------
 
 function setScoreBoard(){
-	var leaderBoardText = "Highscore \n";
-	leaderBoardText += "---------\n\n";
-
+	var leaderBoardText = "\n";
 	var name;
 	var score;
 
@@ -93,7 +91,7 @@ function setScoreBoard(){
 		name = this.loadHighScoreName(i);
 		score = this.loadHighScore(i);
 
-		leaderBoardText += name + "  " + score + "\n";
+		leaderBoardText += name + "  " + score + "\n\n";
 	}
 
 
