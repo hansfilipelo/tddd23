@@ -11,6 +11,8 @@ var xMovement : float;
 var counterMax : float;
 var life : int;
 var Explosion : Transform;
+var player : GameObject;
+var score : int = 10;
 
 
 function Start() {
@@ -19,11 +21,13 @@ function Start() {
 	Speed = Random.Range(speedMin,speedMax);
 	xMovement = Random.Range(-spread,spread);
 	life = 10;
+	player = GameObject.Find("Player");
 }
 
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
+		player.SendMessage("score", score);
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}

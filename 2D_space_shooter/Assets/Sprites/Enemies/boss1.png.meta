@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: cf470ec0a36624a20af71525981af26d
+timeCreated: 1444302511
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: boss1_0
+    21300002: boss1_1
+    21300004: boss1_2
+    21300006: boss1_3
+    21300008: boss1_4
+    21300010: boss1_5
+    21300012: boss1_6
+    21300014: boss1_7
+    21300016: boss1_8
+    21300018: boss1_9
+    21300020: boss1_10
+    21300022: boss1_11
+    21300024: boss1_12
+    21300026: boss1_13
+    21300028: boss1_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: boss1_0
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 553
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_1
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 553
+        width: 50
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_2
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 459
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 459
+        width: 65
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_4
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 412
+        width: 51
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 412
+        width: 51
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 47
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_7
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 101
+        width: 245
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_8
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 344
+        width: 55
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_9
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 344
+        width: 55
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_10
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 216
+        width: 47
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_11
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 84
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_12
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 84
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_13
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 80
+        width: 32
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: boss1_14
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 0
+        width: 41
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
