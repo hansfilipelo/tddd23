@@ -18,6 +18,7 @@ var shootCount : int=0;
 var life : float;
 
 var Explosion : Transform;
+var SmallExplosion : Transform;
 var rb : Rigidbody2D;
 var healthBar : Transform;
 
@@ -63,6 +64,8 @@ function hit(damage : int) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		var player = GameObject.Find("Player");
 		player.GetComponent(PlayerScript).Death();
+	}else{
+		Instantiate(SmallExplosion, rb.position, Quaternion.identity);
 	}
 }
 

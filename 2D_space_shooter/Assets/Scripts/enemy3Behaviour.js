@@ -7,6 +7,7 @@ var movementVector : Vector2;
 var life : int;
 var Explosion : Transform;
 
+
 function Start () {
 	life = 20;
 	movementVector = Vector2(-xMovement,-Speed);
@@ -37,6 +38,7 @@ function Update () {
 function OnCollisionEnter2D(collision : Collision2D) {
 	if (collision.gameObject.name == "Player ship") {
 		collision.gameObject.SendMessage("hit", 50);
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }

@@ -12,6 +12,7 @@ var counterMax : float;
 var life : int;
 var Explosion : Transform;
 
+
 function Start() {
 	counter=0;
 	scaler=counterMax + 1;
@@ -48,6 +49,7 @@ function Update () {
 function OnCollisionEnter2D(collision : Collision2D) {
 	if (collision.gameObject.name == "Player ship") {
 		collision.gameObject.SendMessage("hit", 50);
+		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
 }

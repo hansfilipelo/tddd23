@@ -82,6 +82,7 @@ MonoBehaviour:
   counterMax: 300
   life: 0
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
 --- !u!212 &21252682
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -151,6 +152,10 @@ Prefab:
       propertyPath: Explosion
       value: 
       objectReference: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+    - target: {fileID: 0}
+      propertyPath: SmallExplosion
+      value: 
+      objectReference: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 165960}

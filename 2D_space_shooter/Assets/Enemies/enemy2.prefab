@@ -81,6 +81,7 @@ MonoBehaviour:
   exitTime: 5
   laser: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+  SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
 --- !u!212 &21285906
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,6 +155,10 @@ Prefab:
       propertyPath: Explosion
       value: 
       objectReference: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
+    - target: {fileID: 0}
+      propertyPath: SmallExplosion
+      value: 
+      objectReference: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186822}
