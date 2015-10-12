@@ -7,6 +7,11 @@ var Speed : float;
 var player : GameObject;
 var playerShip : GameObject;
 
+function Start(){
+	player = GameObject.Find("Player");
+	playerShip = player.Find("Player ship");
+}
+
 function hit(damage : int) {
 }
 
@@ -28,9 +33,7 @@ function OnCollisionEnter2D(collision : Collision2D) {
    		}else if(collision.gameObject.name=="Leaderboard"){
      		Application.LoadLevel ("Leaderboard");
      	}else if(collision.gameObject.name=="Backbutton"){
-				player = GameObject.Find("Player");
 				Destroy(player);
-				playerShip = GameObject.Find("Player").Find("Player ship");
 				Destroy(playerShip.gameObject);
      		Application.LoadLevel ("Startmenu");
      	}else if(collision.gameObject.name=="enemyLaser(Clone)"){
