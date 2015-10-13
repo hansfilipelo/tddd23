@@ -44,12 +44,20 @@ function Start () {
 
 // -------
 
+function goToTransition(){
+  yield WaitForSeconds(3);
+  Application.LoadLevel("Transition");
+  Destroy(this.gameObject);
+}
+
+// ------
+
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-    player.SendMessage("score",score);
+   		player.SendMessage("score",score);
 		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
-		Destroy(this.gameObject);
+		this.SendMessage("goToTransition");
 	}
 }
 

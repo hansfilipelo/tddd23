@@ -4,6 +4,9 @@ var rb: Rigidbody2D;
 var hitSound : AudioClip;
 var Speed : float;
 
+var SmallExplosion : Transform;
+
+
 var player : GameObject;
 var playerShip : GameObject;
 
@@ -11,6 +14,7 @@ function Start(){
 	player = GameObject.Find("Player");
 	playerShip = player.Find("Player ship");
 }
+
 
 function hit(damage : int) {
 }
@@ -40,6 +44,7 @@ function OnCollisionEnter2D(collision : Collision2D) {
      	}else{
      		AudioSource.PlayClipAtPoint(hitSound, rb.position);
         	collision.gameObject.SendMessage("hit", 10);
+        	Instantiate(SmallExplosion, rb.position, Quaternion.identity);
        		Destroy(this.gameObject);
     }
 }
