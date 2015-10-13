@@ -9,6 +9,11 @@ var clone : Transform;
 var myScore : int = 0;
 var scoreText : GUIText;
 
+var	deathText:GameObject;
+var	deathTimeText:GameObject;
+var deathTime : int = 0;
+var Dead : boolean = false;
+
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
 }
@@ -103,24 +108,46 @@ function setScoreBoard(){
 
 function Death(){
 	PlayerLife-=1;
+	deathText = GameObject.Find("deathText");
+	deathTimeText = GameObject.Find("deathTimeText");
+	Debug.Log(deathText);
+	Debug.Log(deathTimeText);
 	if (PlayerLife<=0){
 		this.saveScore("Gustaf",myScore,0);
 		Destroy(clone.gameObject);
 		Destroy(this.gameObject);
 		Application.LoadLevel ("Startmenu");
 	}else{
-		Application.LoadLevel (Application.loadedLevel);
 		Destroy(clone.gameObject);
-		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
-		clone.name = "Player ship";
-		clone.SendMessage("Start");
-		this.SendMessage("setHealthBar");
+		deathTime = Time.time+4;
+		Dead = true;
+		deathText.GetComponent(UI.Text).text = "respawn in";
+		//Application.LoadLevel (Application.loadedLevel);
+		//clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
+		//clone.name = "Player ship";
+		//clone.SendMessage("Start");
+		//this.SendMessage("setHealthBar");
 		}
 }
 
 // -------
 
 function Update () {
-
-
+	
+	if(Dead){
+		if(deathTime-Time.time >= 3){
+			deathTimeText.GetComponent(UI.Text).text = "3";
+		}else if(deathTime-Time.time>=2){
+			deathTimeText.GetComponent(UI.Text).text = "2";
+		}else if(deathTime-Time.time>=1){
+			deathTimeText.GetComponent(UI.Text).text = "1";
+		}else if(deathTime-Time.time>=0){
+			Application.LoadLevel (Application.loadedLevel);
+			clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
+			clone.name = "Player ship";
+			clone.SendMessage("Start");
+			this.SendMessage("setHealthBar");
+			Dead = false;
+		}
+	}
 }
