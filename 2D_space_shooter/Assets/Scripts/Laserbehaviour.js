@@ -3,9 +3,9 @@
 var rb: Rigidbody2D;
 var hitSound : AudioClip;
 var Speed : float;
-<<<<<<< HEAD
+
 var SmallExplosion : Transform;
-=======
+
 
 var player : GameObject;
 var playerShip : GameObject;
@@ -14,7 +14,7 @@ function Start(){
 	player = GameObject.Find("Player");
 	playerShip = player.Find("Player ship");
 }
->>>>>>> master
+
 
 function hit(damage : int) {
 }

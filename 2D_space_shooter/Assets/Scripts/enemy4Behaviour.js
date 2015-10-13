@@ -9,12 +9,11 @@ var shootCount : int;
 var maxShootCount : int;
 var yMovement : float;
 var Explosion : Transform;
-<<<<<<< HEAD
-=======
+
 var player : GameObject;
 var score = 20;
 
->>>>>>> master
+
 var laser : Transform;
 
 function Start () {

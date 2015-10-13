@@ -11,7 +11,7 @@ var scoreText : GUIText;
 
 var	deathText:GameObject;
 var	deathTimeText:GameObject;
-var deathTime : int = 0;
+var deathTime : int;
 var Dead : boolean = false;
 
 function Awake(){
