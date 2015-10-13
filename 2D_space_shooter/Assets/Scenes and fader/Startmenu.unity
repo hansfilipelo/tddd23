@@ -272,11 +272,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 718901933}
-  PlayerLife: 3
   PlayerShip: {fileID: 445272, guid: 25896dfca4dad477682fe944aad2e781, type: 2}
   healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
   clone: {fileID: 0}
-  myScore: 0
   scoreText: {fileID: 0}
   deathText: {fileID: 0}
   deathTimeText: {fileID: 0}

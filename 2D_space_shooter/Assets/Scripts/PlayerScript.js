@@ -2,11 +2,11 @@
 
 
 var rb : Rigidbody2D;
-var PlayerLife : float;
+static var PlayerLife : int;
 var PlayerShip : Transform;
 var healthBar : Transform;
 var clone : Transform;
-var myScore : int = 0;
+static var myScore : int = 0;
 var scoreText : GUIText;
 
 var	deathText:GameObject;
@@ -21,6 +21,7 @@ function Awake(){
 // --------
 
 function Start () {
+		PlayerLife=3;
 		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
 }
@@ -100,7 +101,7 @@ function setScoreBoard(){
 	}
 
 
-	Debug.Log(leaderBoardText);
+	
 	GameObject.Find("leaderBoard").SendMessage("setLeaderBoard",leaderBoardText);
 }
 
@@ -110,8 +111,7 @@ function Death(){
 	PlayerLife-=1;
 	deathText = GameObject.Find("deathText");
 	deathTimeText = GameObject.Find("deathTimeText");
-	Debug.Log(deathText);
-	Debug.Log(deathTimeText);
+
 	if (PlayerLife<=0){
 		this.saveScore("Gustaf",myScore,0);
 		Destroy(clone.gameObject);
