@@ -12,7 +12,8 @@ var Explosion : Transform;
 
 var player : GameObject;
 var score = 20;
-
+var edgeForMe : float;
+var tempEdge : float;
 
 var laser : Transform;
 
@@ -48,18 +49,25 @@ function shoot(){
 
 // -------
 
-function Update () {
+function setEdge(edge : float){
+	tempEdge = edge;
+}
 
+// -------
+
+
+function Update () {
+	edgeForMe = tempEdge;
 	if(direction == "right"){
 		rb.MovePosition(rb.position+ Vector2(1,yMovement) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] > Player_controls.Upperboundry_x-0.5){
+		if(rb.position[0] > Player_controls.Upperboundry_x-edgeForMe){
 			direction = "left";
 		}
 		shoot();
 	}
 	else{
 		rb.MovePosition(rb.position+ Vector2(-1,yMovement) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] < Player_controls.Lowerboundry_x+0.5){
+		if(rb.position[0] < Player_controls.Lowerboundry_x+3-edgeForMe){
 			direction = "right";
 		}
 		shoot();

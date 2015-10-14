@@ -5,12 +5,12 @@
 
 var meteorWaveTime : int = 2;
 var enemyWave1Time : int = 8;
-var enemyWave2Time : int = 14;
-var enemyWave3Time : int = 20;
-var enemyWave4Time : int = 26;
-var enemyWave5Time : int = 30;
-var healthPowerUpTime : int = 36;
-var boss1Time : int = 42;
+var enemyWave2Time : int = 16;
+var enemyWave3Time : int = 24;
+var enemyWave4Time : int = 32;
+var enemyWave5Time : int = 46;
+var healthPowerUpTime : int = 50;
+var boss1Time : int = 56;
 
 // ----------
 // Initiate variables
@@ -50,6 +50,17 @@ var boss1Spawned : int;
 // -----------
 
 function Start () {
+
+	// ----------
+	// Spawn times for enemies
+	meteorWaveTime = 2;
+	enemyWave1Time = 8;
+	enemyWave2Time = 16;
+	enemyWave3Time = 24;
+	enemyWave4Time = 32;
+	enemyWave5Time = 46;
+	healthPowerUpTime = 50;
+	boss1Time = 56;
 
 	meteorsSpawned = 0;
 	meteorSpawnTime = Time.time + meteorWaveTime;
@@ -92,7 +103,7 @@ function meteorWave(nr : int){
 function enemy1Wave(nr : int){
 	enemyWave1Spawned = 1;
 	for(var i = 0; i < nr; i++){
-		Instantiate(enemy1Fab, Vector2(Player_controls.Lowerboundry_x-2-i,Player_controls.Upperboundry_y+2*i), Quaternion.identity);
+		Instantiate(enemy1Fab, Vector2(Player_controls.Lowerboundry_x-i,Player_controls.Upperboundry_y+2*i), Quaternion.identity);
 	}
 }
 
@@ -101,7 +112,7 @@ function enemy1Wave(nr : int){
 function enemy2Wave(nr : int){
 	enemyWave2Spawned = 1;
 	for(var i = 0; i < nr; i++){
-		Instantiate(enemy2Fab, Vector2(Player_controls.Lowerboundry_x+i,Player_controls.Upperboundry_y+1), Quaternion.identity);
+		Instantiate(enemy2Fab, Vector2(Player_controls.Lowerboundry_x+3.5-1.5*i,Player_controls.Upperboundry_y+1), Quaternion.identity).gameObject.SendMessage("setEdge",0.5+i*1.5);
 	}
 }
 
@@ -120,7 +131,7 @@ function enemy3Wave(nr : int){
 function enemy4Wave(nr : int){
 	enemyWave4Spawned = 1;
 	for(var i = 0; i < nr; i++){
-		Instantiate(enemy4Fab, Vector2(Player_controls.Lowerboundry_x+i,Player_controls.Upperboundry_y+1), Quaternion.identity);
+		Instantiate(enemy4Fab, Vector2(Player_controls.Lowerboundry_x-i*1.5,Player_controls.Upperboundry_y+1), Quaternion.identity).gameObject.SendMessage("setEdge",0.5+i*1.5);
 	}
 }
 
@@ -167,11 +178,11 @@ function Update () {
 	}
 
 	if(!enemyWave3Spawned && Time.time > enemy3SpawnTime){
-		enemy3Wave(2);
+		enemy3Wave(3);
 	}
 
 	if(!enemyWave4Spawned && Time.time > enemy4SpawnTime){
-		enemy4Wave(1);
+		enemy4Wave(3);
 	}
 
 	if(!enemyWave5Spawned && Time.time > enemy5SpawnTime){
