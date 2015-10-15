@@ -318,19 +318,19 @@ MonoBehaviour:
   enemyWave3Spawned: 0
   enemy4Fab: {fileID: 465312, guid: 08b040ab8e69c476ab2129d07bd3f11a, type: 2}
   enemy4SpawnTime: 0
-  enemyWave4Time: 28
+  enemyWave4Time: 30
   enemyWave4Spawned: 0
   enemy5Fab: {fileID: 483530, guid: c077f1c4a0279433dbaa590fd6e8a417, type: 2}
   enemy5SpawnTime: 0
-  enemyWave5Time: 34
+  enemyWave5Time: 40
   enemyWave5Spawned: 0
   healthPowerUp: {fileID: 493022, guid: 0dbb5d11367764dc2beef602cc728903, type: 2}
   healthPowerUpSpawnTime: 0
-  healthPowerUpTime: 40
+  healthPowerUpTime: 46
   healthPowerUpSpawned: 0
   boss1: {fileID: 455312, guid: f876b047600fd48d590cb010d82540d6, type: 2}
   boss1SpawnTime: 0
-  boss1Time: 46
+  boss1Time: 50
   boss1Spawned: 0
 --- !u!4 &598655525
 Transform:
@@ -570,7 +570,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
