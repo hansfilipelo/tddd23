@@ -6,7 +6,8 @@ static var PlayerLife : int;
 var PlayerShip : Transform;
 var healthBar : Transform;
 var clone : Transform;
-static var myScore : int = 0;
+static var myScore : int;
+static var level : int;
 var scoreText : GUIText;
 
 var	deathText:GameObject;
@@ -24,6 +25,8 @@ function Start () {
 		PlayerLife=3;
 		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 		clone.name = "Player ship";
+		level = 1;
+		myScore = 0;
 }
 
 // --------
@@ -101,7 +104,7 @@ function setScoreBoard(){
 	}
 
 
-	
+
 	GameObject.Find("leaderBoard").SendMessage("setLeaderBoard",leaderBoardText);
 }
 
@@ -132,8 +135,16 @@ function Death(){
 
 // -------
 
+function levelUp(){
+	this.level += 1;
+	yield WaitForSeconds(3);
+	this.setHealthBar();
+}
+
+// -------
+
 function Update () {
-	
+
 	if(Dead){
 		if(deathTime-Time.time >= 3){
 			deathTimeText.GetComponent(UI.Text).text = "3";
