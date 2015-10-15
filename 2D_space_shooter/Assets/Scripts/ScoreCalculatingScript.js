@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 var ScoreInc: int=0;
 var ScoreMultiplier: int=0;
 var ScoreTotal: int=0;
@@ -37,18 +37,19 @@ function loadNextLevel(){
 // --------
 
 function Update () {
-if(ScoreInc<=PlayerScript.myScore){
-		ScoreText.GetComponent(UI.Text).text = ": " + ScoreInc;
-		ScoreInc+=20;
-	}else if(ScoreTotal<=PlayerScript.PlayerLife*PlayerScript.myScore){
-		TotalText.GetComponent(UI.Text).text = ": " + ScoreTotal;
-		ScoreTotal+=50;
+	if (scoreDone == 0) {
+		if(ScoreInc < PlayerScript.myScore){
+			ScoreText.GetComponent(UI.Text).text = ": " + ScoreInc;
+			ScoreInc+=20;
+		}else if(ScoreTotal < PlayerScript.PlayerLife*PlayerScript.myScore){
+			TotalText.GetComponent(UI.Text).text = ": " + ScoreTotal;
+			ScoreTotal+=50;
+		}
+		else{
+			scoreDone = 1;
+		}
 	}
-	else if (scoreDone == 0){
-		scoreDone = 1;
-	}
-
-	if (scoreDone == 1) {
+	else if (scoreDone == 1) {
 		scoreDone = -1;
 		this.gameObject.SendMessage("loadNextLevel");
 	}
