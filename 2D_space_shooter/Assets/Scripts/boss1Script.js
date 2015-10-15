@@ -45,7 +45,7 @@ function Start () {
 // -------
 
 function goToTransition(){
-  yield WaitForSeconds(3);
+  //yield WaitForSeconds(3);
   Application.LoadLevel("Transition");
   Destroy(this.gameObject);
 }
@@ -55,7 +55,7 @@ function goToTransition(){
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-   		player.SendMessage("score",score);
+   	player.SendMessage("score",score);
 		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
 		this.SendMessage("goToTransition");
 	}
