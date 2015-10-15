@@ -147,7 +147,7 @@ function Update () {
 		}
 	}
 
-	if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") ) {
+	if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") || Input.GetKeyDown("joystick button 9") ) {
 		if (!paused) {
 			Time.timeScale = 0;
 			lastShootTime = Time.time;
