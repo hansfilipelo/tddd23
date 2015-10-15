@@ -10,7 +10,7 @@ var enemyWave3Time : int = 24;
 var enemyWave4Time : int = 32;
 var enemyWave5Time : int = 46;
 var healthPowerUpTime : int = 50;
-var boss1Time : int = 56;
+var boss2Time : int = 56;
 
 // ----------
 // Initiate variables
@@ -43,9 +43,9 @@ var healthPowerUp : Transform;
 var healthPowerUpSpawnTime : float;
 var healthPowerUpSpawned : int;
 
-var boss1 : Transform;
-var boss1SpawnTime : float;
-var boss1Spawned : int;
+var boss2 : Transform;
+var boss2SpawnTime : float;
+var boss2Spawned : int;
 
 // -----------
 
@@ -60,7 +60,7 @@ function Start () {
 	enemyWave4Time = 32;
 	enemyWave5Time = 46;
 	healthPowerUpTime = 50;
-	boss1Time = 56;
+	boss2Time = 56;
 
 	meteorsSpawned = 0;
 	meteorSpawnTime = Time.time + meteorWaveTime;
@@ -83,8 +83,8 @@ function Start () {
 	healthPowerUpSpawned = 0;
 	healthPowerUpSpawnTime = Time.time + healthPowerUpTime;
 
-	boss1Spawned = 0;
-	boss1SpawnTime = Time.time + boss1Time;
+	boss2Spawned = 0;
+	boss2SpawnTime = Time.time + boss2Time;
 }
 
 
@@ -148,9 +148,9 @@ function enemy5Wave(nr : int){
 
 // ---
 
-function boss1Wave(){
-	boss1Spawned = 1;
-	Instantiate(boss1, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
+function boss2Wave(){
+	boss2Spawned = 1;
+	Instantiate(boss2, Vector2(0,Player_controls.Upperboundry_y), Quaternion.identity);
 }
 
 // ------
@@ -193,7 +193,7 @@ function Update () {
 		healthPowerUpWave();
 	}
 
-	if(!boss1Spawned && Time.time > boss1SpawnTime){
-		boss1Wave();
+	if(!boss2Spawned && Time.time > boss2SpawnTime){
+		boss2Wave();
 	}
 }

@@ -303,7 +303,7 @@ MonoBehaviour:
   enemyWave4Time: 0
   enemyWave5Time: 0
   healthPowerUpTime: 0
-  boss1Time: 0
+  boss2Time: 56
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
   meteorSpawnTime: 2
   meteorsSpawned: 0
@@ -325,9 +325,9 @@ MonoBehaviour:
   healthPowerUp: {fileID: 493022, guid: 0dbb5d11367764dc2beef602cc728903, type: 2}
   healthPowerUpSpawnTime: 0
   healthPowerUpSpawned: 0
-  boss1: {fileID: 0}
-  boss1SpawnTime: 0
-  boss1Spawned: 0
+  boss2: {fileID: 455312, guid: 40eda8f82d4ed40bbba0f19359af96db, type: 2}
+  boss2SpawnTime: 0
+  boss2Spawned: 0
 --- !u!4 &439804006
 Transform:
   m_ObjectHideFlags: 0
