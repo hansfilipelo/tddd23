@@ -147,15 +147,17 @@ function Update () {
 		}
 	}
 
-	if(!paused && Input.GetKeyDown(pause)) {
-		Time.timeScale = 0;
-		lastShootTime = Time.time;
-		paused = 1;
-	}
-	else if(paused && Input.GetKeyDown(pause)) {
-		Time.timeScale = 1;
-		paused = 0;
+	if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") ) {
+		if (!paused) {
+			Time.timeScale = 0;
+			lastShootTime = Time.time;
+			paused = 1;
+		}
+		else {
+			Time.timeScale = 1;
+			paused = 0;
+		}
 	}
 
-  v2 = Vector2(0,0);
+	v2 = Vector2(0,0);
 }
