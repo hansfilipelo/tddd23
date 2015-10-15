@@ -35,7 +35,7 @@ function Start () {
   score = 2000;
 	direction = "right";
 	life = 200;
-	maxShootCount = 30;
+	maxShootCount = 35;
 	shootCount = maxShootCount;
   yMovement = 2;
   speed = 2;
@@ -68,6 +68,7 @@ function shoot(){
 	if (shootCount > maxShootCount) {
 		Instantiate(laser, this.getPosition() +Vector2(1.26,-1) , Quaternion.identity);
     Instantiate(laser, this.getPosition() +Vector2(-1.26,-1) , Quaternion.identity);
+    Instantiate(laser, this.getPosition() +Vector2(0,-1) , Quaternion.identity);
 		shootCount = 0;
 	}
   if (!Player_controls.paused){

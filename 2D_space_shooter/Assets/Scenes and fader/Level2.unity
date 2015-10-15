@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -116,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 1997211142, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowActivationOnStandalone: 0
+  m_ForceModuleActive: 0
 --- !u!114 &41994472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +132,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: .5
-  m_AllowActivationOnMobileDevice: 0
+  m_ForceModuleActive: 0
 --- !u!114 &41994473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +206,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4ad2f69edf53b4d0da2fb406b3b4a7bb, type: 3}
     m_FontSize: 10
@@ -303,9 +307,9 @@ MonoBehaviour:
   enemyWave4Time: 0
   enemyWave5Time: 0
   healthPowerUpTime: 0
-  boss2Time: 56
+  boss2Time: 0
   meteorFab: {fileID: 412608, guid: e158c26c894d34497b09c105da6095da, type: 2}
-  meteorSpawnTime: 2
+  meteorSpawnTime: 0
   meteorsSpawned: 0
   enemy1Fab: {fileID: 491806, guid: 8d16f26fea28c48c1bf2119a41cf1402, type: 2}
   enemy1SpawnTime: 0
@@ -325,7 +329,7 @@ MonoBehaviour:
   healthPowerUp: {fileID: 493022, guid: 0dbb5d11367764dc2beef602cc728903, type: 2}
   healthPowerUpSpawnTime: 0
   healthPowerUpSpawned: 0
-  boss2: {fileID: 455312, guid: 40eda8f82d4ed40bbba0f19359af96db, type: 2}
+  boss2: {fileID: 455312, guid: 43f6f230a6ee546098b41008b3a35641, type: 2}
   boss2SpawnTime: 0
   boss2Spawned: 0
 --- !u!4 &439804006
@@ -409,6 +413,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -441,6 +446,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1

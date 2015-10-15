@@ -3,14 +3,14 @@
 // ----------
 // Spawn times for enemies
 
-var meteorWaveTime : int = 2;
-var enemyWave1Time : int = 8;
-var enemyWave2Time : int = 16;
-var enemyWave3Time : int = 24;
-var enemyWave4Time : int = 32;
-var enemyWave5Time : int = 46;
-var healthPowerUpTime : int = 50;
-var boss2Time : int = 56;
+var meteorWaveTime : int;
+var enemyWave1Time : int;
+var enemyWave2Time : int;
+var enemyWave3Time : int;
+var enemyWave4Time : int;
+var enemyWave5Time : int;
+var healthPowerUpTime : int;
+var boss2Time : int;
 
 // ----------
 // Initiate variables
