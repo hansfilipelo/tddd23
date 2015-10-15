@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 
 var rb : Rigidbody2D;
@@ -22,11 +22,11 @@ function Awake(){
 // --------
 
 function Start () {
-		PlayerLife=3;
-		clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
-		clone.name = "Player ship";
-		level = 1;
-		myScore = 0;
+	PlayerLife=3;
+	clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
+	clone.name = "Player ship";
+	level = 1;
+	myScore = 0;
 }
 
 // --------
@@ -125,12 +125,7 @@ function Death(){
 		deathTime = Time.time+4;
 		Dead = true;
 		deathText.GetComponent(UI.Text).text = "respawn in";
-		//Application.LoadLevel (Application.loadedLevel);
-		//clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
-		//clone.name = "Player ship";
-		//clone.SendMessage("Start");
-		//this.SendMessage("setHealthBar");
-		}
+	}
 }
 
 // -------

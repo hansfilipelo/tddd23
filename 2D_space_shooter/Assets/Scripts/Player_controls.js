@@ -71,6 +71,7 @@ function hit(damage : int) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		var player = GameObject.Find("Player");
 		player.GetComponent(PlayerScript).Death();
+		Destroy(this);
 	}else{
 		Instantiate(SmallExplosion, rb.position, Quaternion.identity);
 	}
