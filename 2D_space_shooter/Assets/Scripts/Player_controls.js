@@ -6,6 +6,7 @@ var MoveDown : KeyCode;
 var MoveLeft : KeyCode;
 var MoveRight : KeyCode;
 var Shoot : KeyCode;
+var pause : KeyCode;
 
 var controllerAvail : int;
 var joyX : float;
@@ -15,7 +16,10 @@ var deadZone : float;
 
 var Speed : float;
 var shootCount : int=0;
+static var paused : int;
 var life : float;
+var lastShootTime : float;
+var shootDelay : float;
 
 var Explosion : Transform;
 var SmallExplosion : Transform;
@@ -39,6 +43,9 @@ function Awake(){
 
 
 function Start(){
+
+	paused = 0;
+	shootDelay = 0.2;
 
 	if(Input.GetJoystickNames().length > 0){
 		controllerAvail = 1;
@@ -105,9 +112,9 @@ function Update () {
 
 		if(Input.GetButton("Fire1"))
 		{
-			if (shootCount >= 10){
+			if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
-					shootCount = 0;
+					lastShootTime = Time.time;
 				}
 		}
 	}
@@ -133,13 +140,22 @@ function Update () {
 
 		if(Input.GetKey(Shoot))
 		{
-			if (shootCount >= 10){
+			if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
-					shootCount = 0;
+					lastShootTime = Time.time;
 				}
 		}
 	}
 
+	if(!paused && Input.GetKeyDown(pause)) {
+		Time.timeScale = 0;
+		lastShootTime = Time.time;
+		paused = 1;
+	}
+	else if(paused && Input.GetKeyDown(pause)) {
+		Time.timeScale = 1;
+		paused = 0;
+	}
+
   v2 = Vector2(0,0);
-	shootCount++;
 }

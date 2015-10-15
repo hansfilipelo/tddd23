@@ -46,7 +46,9 @@ function shoot(){
 		Instantiate(laser, rb.position +Vector2(0,-0.7) , Quaternion.identity);
 		shootCount = 0;
 	}
-	shootCount++;
+	if (!Player_controls.paused){
+    shootCount++;
+  }
 }
 
 // -------

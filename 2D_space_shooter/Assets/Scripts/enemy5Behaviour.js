@@ -28,7 +28,7 @@ function hit(damage : int) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
 	}
-	
+
 }
 
 // -------
@@ -38,7 +38,9 @@ function shoot(){
 		Instantiate(laser, rb.position +Vector2(0,-1) , Quaternion.identity);
 		shootCount = 0;
 	}
-	shootCount++;
+	if (!Player_controls.paused){
+    shootCount++;
+  }
 }
 
 // -------

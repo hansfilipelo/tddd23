@@ -90,6 +90,7 @@ MonoBehaviour:
   MoveLeft: 97
   MoveRight: 100
   Shoot: 32
+  pause: 112
   controllerAvail: 0
   joyX: 0
   joyY: 0
@@ -97,6 +98,7 @@ MonoBehaviour:
   deadZone: 0
   Speed: 5
   shootCount: 10
+  paused: 0
   life: 100
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
@@ -154,6 +156,10 @@ Prefab:
       propertyPath: SmallExplosion
       value: 
       objectReference: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: pause
+      value: 112
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110672}
