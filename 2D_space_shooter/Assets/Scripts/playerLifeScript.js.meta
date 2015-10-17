@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7476b0f0d9353477787e0c122e13d4b3
+timeCreated: 1445065687
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - LifeSprite: {fileID: 428998, guid: 8aa75b00c60874989b2795c69a086215, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

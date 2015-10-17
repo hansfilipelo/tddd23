@@ -7,6 +7,7 @@ var divisor : int = 4;
 var distanceBetweenPlup : float = 0.02;
 var boostSound : AudioClip;
 var removeSound : AudioClip;
+var LifeSprite : Transform;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
@@ -16,7 +17,11 @@ function Start(){
   var currPlup : Transform;
   healthArray = [];
   lifeArray = [];
-
+	
+	for(var j = 0; j<PlayerScript.PlayerLife;j++){
+	Instantiate(this.LifeSprite, Vector2(-6.64,-4.06+0.5*j), Quaternion.identity);
+	}
+	
 	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   for (var i = 0; i < 100/divisor; i++) {
     currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity);

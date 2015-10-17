@@ -21,6 +21,7 @@ var Explosion : Transform;
 var SmallExplosion : Transform;
 var rb : Rigidbody2D;
 var healthBar : Transform;
+var PlayerLife : Transform;
 
 static var Upperboundry_x : float=3.5;
 static var Upperboundry_y : float=5;
@@ -31,7 +32,6 @@ var laser : Transform;
 
 var v2 : Vector2=Vector2(0,0);
 
-//var player : PlayerScript;
 
 function Awake(){
 	DontDestroyOnLoad (this.gameObject);
@@ -47,6 +47,7 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
+	
 }
 
 // -------

@@ -54,7 +54,6 @@ function OnCollisionEnter2D(collision : Collision2D) {
 	if (collision.gameObject.name == "Player ship") {
 		collision.gameObject.SendMessage("hit", 50);
 		Instantiate(Explosion, rb.position, Quaternion.identity);
-		Application.LoadLevel("Transition");
 		Destroy(this.gameObject);
 		
 	}
