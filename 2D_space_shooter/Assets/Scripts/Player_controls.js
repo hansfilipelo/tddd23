@@ -6,6 +6,7 @@ var MoveDown : KeyCode;
 var MoveLeft : KeyCode;
 var MoveRight : KeyCode;
 var Shoot : KeyCode;
+var pause : KeyCode;
 
 var controllerAvail : int;
 var joyX : float;
@@ -15,7 +16,11 @@ var deadZone : float;
 
 var Speed : float;
 var shootCount : int=0;
+static var paused : int;
 var life : float;
+var lastShootTime : float;
+var shootDelay : float;
+var platform;
 
 var Explosion : Transform;
 var SmallExplosion : Transform;
@@ -39,6 +44,17 @@ function Awake(){
 
 
 function Start(){
+
+	// XBOX controller is reporting different keylayout on Mac vs Linux and Windows.
+	if ( Application.platform == RuntimePlatform.OSXPlayer || Application.platform == RuntimePlatform.OSXEditor ) {
+		platform = "MacOS";
+	}
+
+	// Full volume is too loud.
+	AudioListener.volume = 0.5;
+
+	paused = 0;
+	shootDelay = 0.2;
 
 	if(Input.GetJoystickNames().length > 0){
 		controllerAvail = 1;
@@ -64,6 +80,7 @@ function hit(damage : int) {
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		var player = GameObject.Find("Player");
 		player.GetComponent(PlayerScript).Death();
+		Destroy(this);
 	}else{
 		Instantiate(SmallExplosion, rb.position, Quaternion.identity);
 	}
@@ -74,6 +91,21 @@ function hit(damage : int) {
 function restoreHealth(){
 	life = 100;
 	healthBar.SendMessage("restoreHealth");
+}
+
+// -------
+function pauser(){
+	if (!paused) {
+		Time.timeScale = 0;
+		AudioListener.volume = 0;
+		lastShootTime = Time.time;
+		paused = 1;
+	}
+	else {
+		Time.timeScale = 1;
+		AudioListener.volume = 0.5;
+		paused = 0;
+	}
 }
 
 // -------
@@ -105,9 +137,9 @@ function Update () {
 
 		if(Input.GetButton("Fire1"))
 		{
-			if (shootCount >= 10){
+			if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
-					shootCount = 0;
+					lastShootTime = Time.time;
 				}
 		}
 	}
@@ -133,13 +165,32 @@ function Update () {
 
 		if(Input.GetKey(Shoot))
 		{
-			if (shootCount >= 10){
+			if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
-					shootCount = 0;
+					lastShootTime = Time.time;
 				}
 		}
 	}
 
-  v2 = Vector2(0,0);
-	shootCount++;
+
+	if (Input.GetKeyDown(KeyCode.Escape)) {
+		var player = gameObject.Find("Player");
+		player.SendMessage("saveScore");
+		player.SendMessage("safeDestroy");
+		Application.LoadLevel("Startmenu");
+		Destroy(this.gameObject);
+	}
+
+	if (platform != "MacOS") {
+		if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") ) {
+			pauser();
+		}
+	}
+	else {
+		if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 9") ) {
+			pauser();
+		}
+	}
+
+	v2 = Vector2(0,0);
 }

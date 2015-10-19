@@ -13,7 +13,8 @@ var laser : Transform;
 var Explosion : Transform;
 var player : GameObject;
 var score = 20;
-
+var edgeForMe : float;
+var tempEdge : float;
 
 
 function Start () {
@@ -24,6 +25,7 @@ function Start () {
 	shootCount = maxShootCount;
 	exitTime += Time.time;
 	player = GameObject.Find("Player");
+	edgeForMe = 0.5;
 }
 
 // -------
@@ -44,25 +46,34 @@ function shoot(){
 		Instantiate(laser, rb.position +Vector2(0,-0.7) , Quaternion.identity);
 		shootCount = 0;
 	}
-	shootCount++;
+	if (!Player_controls.paused){
+    shootCount++;
+  }
+}
+
+// -------
+
+function setEdge(edge : float){
+	tempEdge = edge;
 }
 
 // -------
 
 function Update () {
+	edgeForMe = tempEdge;
 	if(exitTime<Time.time){
 		rb.MovePosition(rb.position+ Vector2(0,1) * Time.fixedDeltaTime * speed);
 	}
 	else if(rb.position[1] < stopAndHoverPos && direction == "right"){
 		rb.MovePosition(rb.position+ Vector2(1,0) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] > Player_controls.Upperboundry_x-0.5){
+		if(rb.position[0] > Player_controls.Upperboundry_x-edgeForMe){
 			direction = "left";
 		}
 		shoot();
 	}
 	else if(rb.position[1] < stopAndHoverPos && direction == "left"){
 		rb.MovePosition(rb.position+ Vector2(-1,0) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] < Player_controls.Lowerboundry_x+0.5){
+		if(rb.position[0] < Player_controls.Lowerboundry_x+1.5-edgeForMe){
 			direction = "right";
 		}
 		shoot();

@@ -9,20 +9,14 @@ var maxShootCount : int;
 var yMovement : float;
 var Explosion : Transform;
 var player : GameObject;
-var score = 1000;
+var score : int;
 
 var laser : Transform;
 
 // -------
 
 function moveBody(direction : Vector2, force : float){
-
-  rb.AddForce(direction * rb.mass * force);
-
-//  for (var i = 0; i < rb.length; i++) {
-//    var rbTemp : Rigidbody2D=rb[i];
-//    rbTemp.AddForce(direction * rbTemp.mass * force);
-//  }
+    rb.AddForce(direction * rb.mass * force);
 }
 
 // -------
@@ -34,9 +28,10 @@ function getPosition() : Vector2{
 //--------
 
 function Start () {
+  score = 2000;
 	direction = "right";
 	life = 200;
-	maxShootCount = 30;
+	maxShootCount = 35;
 	shootCount = maxShootCount;
   yMovement = 2;
   speed = 2;
@@ -47,7 +42,7 @@ function Start () {
 // -------
 
 function goToTransition(){
-  //yield WaitForSeconds(3);
+  yield WaitForSeconds(3);
   Application.LoadLevel("Transition");
   Destroy(this.gameObject);
 }
@@ -57,7 +52,7 @@ function goToTransition(){
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-   	player.SendMessage("score",score);
+    player.SendMessage("score",score);
 		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
 		this.SendMessage("goToTransition");
 	}
@@ -69,6 +64,7 @@ function shoot(){
 	if (shootCount > maxShootCount) {
 		Instantiate(laser, this.getPosition() +Vector2(1.26,-2) , Quaternion.identity);
     Instantiate(laser, this.getPosition() +Vector2(-1.26,-2) , Quaternion.identity);
+    Instantiate(laser, this.getPosition() +Vector2(0,-2) , Quaternion.identity);
 		shootCount = 0;
 	}
   if (!Player_controls.paused){

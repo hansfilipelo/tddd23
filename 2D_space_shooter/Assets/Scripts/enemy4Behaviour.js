@@ -9,14 +9,22 @@ var shootCount : int;
 var maxShootCount : int;
 var yMovement : float;
 var Explosion : Transform;
+var levelBarrier : float;
 
 var player : GameObject;
 var score = 20;
-
+var edgeForMe : float;
+var tempEdge : float;
 
 var laser : Transform;
 
 function Start () {
+	if (Application.loadedLevel == 2) { // 2 is ID for Level1
+		levelBarrier = 0;
+	}
+	else {
+		levelBarrier = 3;
+	}
 	direction = "right";
 	life = 30;
 	maxShootCount = 40;
@@ -43,23 +51,32 @@ function shoot(){
 		Instantiate(laser, rb.position +Vector2(0,-0.7) , Quaternion.identity);
 		shootCount = 0;
 	}
-	shootCount++;
+	if (!Player_controls.paused){
+    shootCount++;
+  }
 }
 
 // -------
 
-function Update () {
+function setEdge(edge : float){
+	tempEdge = edge;
+}
 
+// -------
+
+
+function Update () {
+	edgeForMe = tempEdge;
 	if(direction == "right"){
 		rb.MovePosition(rb.position+ Vector2(1,yMovement) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] > Player_controls.Upperboundry_x-0.5){
+		if(rb.position[0] > Player_controls.Upperboundry_x-edgeForMe){
 			direction = "left";
 		}
 		shoot();
 	}
 	else{
 		rb.MovePosition(rb.position+ Vector2(-1,yMovement) * Time.fixedDeltaTime * speed);
-		if(rb.position[0] < Player_controls.Lowerboundry_x+0.5){
+		if(rb.position[0] < Player_controls.Lowerboundry_x+levelBarrier-edgeForMe){
 			direction = "right";
 		}
 		shoot();
