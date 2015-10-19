@@ -9,8 +9,8 @@ var clone : Transform;
 static var myScore : int = 0;
 var scoreText : GUIText;
 
-var	deathText:GameObject;
-var	deathTimeText:GameObject;
+var	deathText: GameObject;
+var	deathTimeText: GameObject;
 var deathTime : int;
 var Dead : boolean = false;
 
@@ -116,7 +116,7 @@ function Death(){
 		this.saveScore("Gustaf",myScore,0);
 		Destroy(clone.gameObject);
 		Destroy(this.gameObject);
-		Application.LoadLevel ("Startmenu");
+		Application.LoadLevel ("GameOver");
 	}else{
 		Destroy(clone.gameObject);
 		deathTime = Time.time+4;

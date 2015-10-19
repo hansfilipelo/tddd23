@@ -33,6 +33,7 @@ MonoBehaviour:
   distanceBetweenPlup: .00999999978
   boostSound: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
   removeSound: {fileID: 8300000, guid: a2afe7c0841ae4ad686955140b6c7852, type: 3}
+  LifeSprite: {fileID: 481110, guid: 3f5e57d67db21409496b4dfea59e36b4, type: 2}
 --- !u!222 &22217030
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -112,6 +113,10 @@ Prefab:
       propertyPath: boostSound
       value: 
       objectReference: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: LifeSprite
+      value: 
+      objectReference: {fileID: 481110, guid: 3f5e57d67db21409496b4dfea59e36b4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124764}

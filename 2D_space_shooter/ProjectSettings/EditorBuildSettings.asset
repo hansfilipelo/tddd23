@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes and fader/Level1.unity
   - enabled: 1
     path: Assets/Scenes and fader/Transition.unity
+  - enabled: 1
+    path: Assets/Scenes and fader/GameOver.unity
