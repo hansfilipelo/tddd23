@@ -154,6 +154,14 @@ function Update () {
 		}
 	}
 
+
+	if (Input.GetKeyDown(KeyCode.Escape)) {
+		Destroy(gameObject.Find("Player"));
+		Destroy(gameObject.Find("healthBar"));
+		Application.LoadLevel("Startmenu");
+		Destroy(this.gameObject);
+	}
+
 	if (platform != "MacOS") {
 		if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") ) {
 			if (!paused) {

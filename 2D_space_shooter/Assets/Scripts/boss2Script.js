@@ -52,7 +52,7 @@ function goToTransition(){
 function hit(damage : int) {
 	life -= damage;
 	if (life <= 0) {
-   		player.SendMessage("score",score);
+    player.SendMessage("score",score);
 		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
 		this.SendMessage("goToTransition");
 	}
