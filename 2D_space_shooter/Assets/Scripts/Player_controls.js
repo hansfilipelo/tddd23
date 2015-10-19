@@ -50,6 +50,9 @@ function Start(){
 		platform = "MacOS";
 	}
 
+	// Full volume is too loud.
+	AudioListener.volume = 0.5;
+
 	paused = 0;
 	shootDelay = 0.2;
 
@@ -88,6 +91,21 @@ function hit(damage : int) {
 function restoreHealth(){
 	life = 100;
 	healthBar.SendMessage("restoreHealth");
+}
+
+// -------
+function pauser(){
+	if (!paused) {
+		Time.timeScale = 0;
+		AudioListener.volume = 0;
+		lastShootTime = Time.time;
+		paused = 1;
+	}
+	else {
+		Time.timeScale = 1;
+		AudioListener.volume = 0.5;
+		paused = 0;
+	}
 }
 
 // -------
@@ -165,28 +183,12 @@ function Update () {
 
 	if (platform != "MacOS") {
 		if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 7") ) {
-			if (!paused) {
-				Time.timeScale = 0;
-				lastShootTime = Time.time;
-				paused = 1;
-			}
-			else {
-				Time.timeScale = 1;
-				paused = 0;
-			}
+			pauser();
 		}
 	}
 	else {
 		if( Input.GetKeyDown(pause) || Input.GetKeyDown("joystick button 9") ) {
-			if (!paused) {
-				Time.timeScale = 0;
-				lastShootTime = Time.time;
-				paused = 1;
-			}
-			else {
-				Time.timeScale = 1;
-				paused = 0;
-			}
+			pauser();
 		}
 	}
 
