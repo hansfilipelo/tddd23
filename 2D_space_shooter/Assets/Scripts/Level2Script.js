@@ -53,14 +53,14 @@ function Start () {
 
 	// ----------
 	// Spawn times for enemies
-	meteorWaveTime = 2;
-	enemyWave1Time = 8;
-	enemyWave2Time = 16;
+	meteorWaveTime = 2; // 2
+	enemyWave1Time = 8; // 8
+	enemyWave2Time = 16; // 16
 	enemyWave3Time = 24;
 	enemyWave4Time = 32;
 	enemyWave5Time = 46;
 	healthPowerUpTime = 50;
-	boss2Time = 56;
+	boss2Time = 56; // 56
 
 	meteorsSpawned = 0;
 	meteorSpawnTime = Time.time + meteorWaveTime;

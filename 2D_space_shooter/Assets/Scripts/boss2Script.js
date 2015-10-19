@@ -1,5 +1,5 @@
 ﻿#pragma strict
-var rb : Component[];
+var rb : Rigidbody2D;
 var xMovement : float;
 var speed : float;
 var direction;
@@ -16,17 +16,13 @@ var laser : Transform;
 // -------
 
 function moveBody(direction : Vector2, force : float){
-  for (var i = 0; i < rb.length; i++) {
-    var rbTemp : Rigidbody2D=rb[i];
-    rbTemp.AddForce(direction * force);
-  }
+    rb.AddForce(direction * rb.mass * force);
 }
 
 // -------
 
 function getPosition() : Vector2{
-  var rbTemp : Rigidbody2D=rb[0];
-  return rbTemp.position;
+  return rb.position;
 }
 
 //--------
@@ -39,7 +35,7 @@ function Start () {
 	shootCount = maxShootCount;
   yMovement = 2;
   speed = 2;
-  rb = this.GetComponentsInChildren(Rigidbody2D);
+  rb = this.GetComponent(Rigidbody2D);
   player = GameObject.Find("Player");
 }
 
@@ -66,9 +62,9 @@ function hit(damage : int) {
 
 function shoot(){
 	if (shootCount > maxShootCount) {
-		Instantiate(laser, this.getPosition() +Vector2(1.26,-1) , Quaternion.identity);
-    Instantiate(laser, this.getPosition() +Vector2(-1.26,-1) , Quaternion.identity);
-    Instantiate(laser, this.getPosition() +Vector2(0,-1) , Quaternion.identity);
+		Instantiate(laser, this.getPosition() +Vector2(1.26,-2) , Quaternion.identity);
+    Instantiate(laser, this.getPosition() +Vector2(-1.26,-2) , Quaternion.identity);
+    Instantiate(laser, this.getPosition() +Vector2(0,-2) , Quaternion.identity);
 		shootCount = 0;
 	}
   if (!Player_controls.paused){
@@ -103,7 +99,7 @@ function Update () {
 		}
 	}
 
-  if (this.getPosition()[1] < 0.5) {
+  if (this.getPosition()[1] < 1.5) {
     moveBody(Vector2.up, yMovement);
   }
   else {
