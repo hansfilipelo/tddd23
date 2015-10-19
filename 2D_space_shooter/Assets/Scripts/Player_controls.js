@@ -156,8 +156,9 @@ function Update () {
 
 
 	if (Input.GetKeyDown(KeyCode.Escape)) {
-		Destroy(gameObject.Find("Player"));
-		Destroy(gameObject.Find("healthBar"));
+		var player = gameObject.Find("Player");
+		player.SendMessage("saveScore");
+		player.SendMessage("safeDestroy");
 		Application.LoadLevel("Startmenu");
 		Destroy(this.gameObject);
 	}
