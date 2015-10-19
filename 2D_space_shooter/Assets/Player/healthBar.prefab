@@ -112,6 +112,10 @@ Prefab:
       propertyPath: boostSound
       value: 
       objectReference: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: LifeSprite
+      value: 
+      objectReference: {fileID: 428998, guid: 8aa75b00c60874989b2795c69a086215, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124764}

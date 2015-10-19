@@ -42,12 +42,16 @@ var boss1Spawned : int;
 
 function Start () {
 
-	// Set up scenes outer edges
-	Gizmos.color = Color.white;
-	//var width = 1;
-	var bottomLeft = Vector2(Player_controls.Lowerboundry_x, Player_controls.Lowerboundry_y);
-	var topLeft = Vector2(Player_controls.Lowerboundry_x, Player_controls.Upperboundry_y);
-	Debug.DrawLine(bottomLeft, topLeft);
+	// ----------
+	// Spawn times for enemies
+	meteorWaveSpawn = 2; // 2
+	enemyWave1Time = 8; // 8
+	enemyWave2Time = 16;
+	enemyWave3Time = 24;
+	enemyWave4Time = 32;
+	enemyWave5Time = 46;
+	healthPowerUpTime = 50;
+	boss1Time = 56; // 56
 
 	meteorsSpawned = 0;
 	meteorSpawnTime = Time.time + meteorWaveSpawn;
