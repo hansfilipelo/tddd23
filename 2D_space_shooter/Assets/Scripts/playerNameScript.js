@@ -7,6 +7,8 @@ function Start () {
   enterPressed = 0;
   nameText = GameObject.Find("enterNameText").GetComponent.<UnityEngine.UI.InputField>();
   player = GameObject.Find("Player");
+  nameText.ActivateInputField();
+  nameText.Select();
 }
 
 function Update () {

@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
   enterPressed: 0
+  player: {fileID: 0}
 --- !u!1 &636891881
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +624,7 @@ GameObject:
   - 222: {fileID: 1843676001}
   - 114: {fileID: 1843675999}
   m_Layer: 5
-  m_Name: Text
+  m_Name: playerNameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
