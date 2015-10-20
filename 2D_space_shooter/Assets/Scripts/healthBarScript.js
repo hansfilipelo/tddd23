@@ -6,6 +6,7 @@ var lifeArray : Array;
 var divisor : int = 4;
 var distanceBetweenPlup : float = 0.02;
 var boostSound : AudioClip;
+var lifeSound : AudioClip;
 var removeSound : AudioClip;
 var LifeSprite : Transform;
 
@@ -18,12 +19,14 @@ function Start(){
   var currLife : Transform;
   healthArray = [];
   lifeArray = [];
-	
+
+	AudioSource.PlayClipAtPoint(lifeSound,Vector2(0,0));
 	for(var j = 0; j<PlayerScript.PlayerLife;j++){
+	yield WaitForSeconds(0.15);
 	currLife = Instantiate(this.LifeSprite,Vector2(0.98,0.07+0.05*j), Quaternion.identity);
 	lifeArray.Push(currLife.gameObject);
 	}
-	
+
 	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   for (var i = 0; i < 100/divisor; i++) {
     currPlup = Instantiate(this.healthPlup, Vector2(0.015,0.05+distanceBetweenPlup*i), Quaternion.identity);
