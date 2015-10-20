@@ -15,11 +15,13 @@ function Awake(){
 
 function Start(){
   var currPlup : Transform;
+  var currLife : Transform;
   healthArray = [];
   lifeArray = [];
 	
 	for(var j = 0; j<PlayerScript.PlayerLife;j++){
-	Instantiate(this.LifeSprite, Vector2(-6.64,-4.06+0.5*j), Quaternion.identity);
+	currLife = Instantiate(this.LifeSprite,Vector2(0.98,0.07+0.05*j), Quaternion.identity);
+	lifeArray.Push(currLife.gameObject);
 	}
 	
 	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
