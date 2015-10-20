@@ -33,7 +33,6 @@ function OnCollisionEnter2D(collision : Collision2D) {
 
      	if (collision.gameObject.name=="Playbutton") {
      		Application.LoadLevel ("Level1");
-				player.SendMessage("setHealthBar");
    		}else if(collision.gameObject.name=="Leaderboard"){
      		Application.LoadLevel ("Leaderboard");
      	}else if(collision.gameObject.name=="Backbutton"){

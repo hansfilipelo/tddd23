@@ -98,12 +98,14 @@ MonoBehaviour:
   deadZone: 0
   Speed: 5
   shootCount: 10
-  paused: 0
   life: 100
+  lastShootTime: 0
+  shootDelay: 0
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
   SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
   rb: {fileID: 5061346}
-  healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
+  healthBar: {fileID: 0}
+  PlayerLife: {fileID: 0}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
   v2: {x: 0, y: 0}
 --- !u!212 &21293598
@@ -142,8 +144,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: Explosion
       value: 

@@ -5,6 +5,7 @@ var rb : Rigidbody2D;
 static var PlayerLife : int;
 var PlayerShip : Transform;
 var healthBar : Transform;
+var healthBarPrefab : Transform;
 var clone : Transform;
 static var myScore : int;
 static var level : int;
@@ -34,10 +35,10 @@ function Start () {
 // --------
 
 function setHealthBar(){
-	yield WaitForSeconds(0.7);
+	//yield WaitForSeconds(0.7);
 	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
 	this.score(0);
-	healthBar = Instantiate(healthBar);
+	healthBar = Instantiate(healthBarPrefab,Vector2(0,0), Quaternion.identity);
 	clone.SendMessage("setHealthBar",healthBar);
 }
 
@@ -99,7 +100,7 @@ function saveScore(){
 // --------
 
 function safeDestroy(){
-	yield WaitForSeconds(0.2);
+	yield WaitForSeconds(0.5);
 	Destroy(healthBar.gameObject);
 	//Destroy(this);
 }
@@ -139,6 +140,7 @@ function Death(){
 		Destroy(clone.gameObject);
 		deathTime = Time.time+4;
 		Dead = true;
+		//this.SendMessage("safeDestroy");
 		deathText.GetComponent(UI.Text).text = "respawn in";
 	}
 }
@@ -148,7 +150,6 @@ function Death(){
 function levelUp(){
 	this.level += 1;
 	yield WaitForSeconds(3);
-	this.setHealthBar();
 }
 
 // -------
@@ -163,11 +164,11 @@ function Update () {
 		}else if(deathTime-Time.time>=1){
 			deathTimeText.GetComponent(UI.Text).text = "1";
 		}else if(deathTime-Time.time>=0){
+			Destroy(healthBar.gameObject);
 			Application.LoadLevel (Application.loadedLevel);
 			clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
 			clone.name = "Player ship";
 			clone.SendMessage("Start");
-			this.SendMessage("setHealthBar");
 			Dead = false;
 		}
 	}

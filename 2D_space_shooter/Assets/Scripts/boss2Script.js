@@ -41,9 +41,9 @@ function Start () {
 
 // -------
 
-function goToTransition(){
+function goToFinished(){
   yield WaitForSeconds(3);
-  Application.LoadLevel("Transition");
+  Application.LoadLevel("GameFinished");
   Destroy(this.gameObject);
 }
 
@@ -54,7 +54,7 @@ function hit(damage : int) {
 	if (life <= 0) {
     player.SendMessage("score",score);
 		Instantiate(Explosion, this.getPosition(), Quaternion.identity);
-		this.SendMessage("goToTransition");
+		this.SendMessage("goToFinished");
 	}
 }
 
