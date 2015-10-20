@@ -50,6 +50,18 @@ function score(nr : int){
 
 // -----
 
+function waitForName(){
+	clone.gameObject.SendMessage("waitForName");
+}
+
+// ------
+
+function stopWaitingForName(){
+	clone.gameObject.SendMessage("stopWaitingForName");
+}
+
+// -----
+
 function loadHighScore(pos : int){
 	if (PlayerPrefs.HasKey("highScore" + pos)) {
 		return PlayerPrefs.GetInt("highScore" + pos);

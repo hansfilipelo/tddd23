@@ -7,6 +7,7 @@ function Start () {
   enterPressed = 0;
   nameText = GameObject.Find("enterNameText").GetComponent.<UnityEngine.UI.InputField>();
   player = GameObject.Find("Player");
+  player.SendMessage("waitForName");
   nameText.ActivateInputField();
   nameText.Select();
 }
@@ -21,4 +22,5 @@ function setName() {
   PlayerScript.myName = nameText.text;
   Application.LoadLevel("Level1");
   player.SendMessage("setHealthBar");
+  player.SendMessage("stopWaitingForName");
 }
