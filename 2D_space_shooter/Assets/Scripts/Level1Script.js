@@ -40,7 +40,11 @@ var boss1SpawnTime : float;
 var boss1Time : float;
 var boss1Spawned : int;
 
+var player : GameObject;
+
 function Start () {
+	player = GameObject.Find("Player");
+	player.SendMessage("setHealthBar");
 
 	// ----------
 	// Spawn times for enemies

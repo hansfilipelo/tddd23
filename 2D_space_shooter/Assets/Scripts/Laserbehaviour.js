@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 var rb: Rigidbody2D;
 var hitSound : AudioClip;
