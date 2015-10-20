@@ -163,6 +163,9 @@ function Death(){
 function levelUp(){
 	this.level += 1;
 	yield WaitForSeconds(3);
+	healthBar.gameObject.SendMessage("Start");
+	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
+	this.score(0);
 }
 
 // -------

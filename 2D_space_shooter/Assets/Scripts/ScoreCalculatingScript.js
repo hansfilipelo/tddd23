@@ -26,9 +26,10 @@ function Start () {
 // --------
 
 function loadNextLevel(){
+	yield WaitForSeconds(1.9);
 	player.SendMessage("score",PlayerScript.myScore*PlayerScript.PlayerLife-PlayerScript.myScore);
 	player.SendMessage("levelUp");
-	yield WaitForSeconds(2);
+	yield WaitForSeconds(0.1);
 	var levelString = "Level" + PlayerScript.level;
 	Application.LoadLevel(levelString);
 }

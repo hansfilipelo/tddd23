@@ -23,9 +23,9 @@ function Start(){
 
 	AudioSource.PlayClipAtPoint(lifeSound,Vector2(0,0));
 	for(var j = 0; j<PlayerScript.PlayerLife;j++){
-	yield WaitForSeconds(0.15);
-	currLife = Instantiate(this.LifeSprite,Vector2(0.98,0.07+0.05*j), Quaternion.identity);
-	lifeArray.Push(currLife.gameObject);
+		yield WaitForSeconds(0.15);
+		currLife = Instantiate(this.LifeSprite,Vector2(0.98,0.07+0.05*j), Quaternion.identity);
+		lifeArray.Push(currLife.gameObject);
 	}
 
 	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
@@ -83,6 +83,7 @@ function clearBar(){
 
 function restoreHealth(){
 	yield WaitForSeconds(0.5);
+
 	AudioSource.PlayClipAtPoint(boostSound,Vector2(0,0));
   var i = 0;
   while (healthArray.length < 100/divisor){
