@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &124764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 22402878}
+  - 222: {fileID: 22217030}
+  - 114: {fileID: 11411260}
+  m_Layer: 5
+  m_Name: healthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &11411260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0ac174fe7cf419688e774c8cf8a97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPlup: {fileID: 424756, guid: a4c2297e393e54406942d2b17a554bb5, type: 2}
+  divisor: 2
+  distanceBetweenPlup: .00999999978
+  boostSound: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
+  removeSound: {fileID: 8300000, guid: a2afe7c0841ae4ad686955140b6c7852, type: 3}
+  LifeSprite: {fileID: 481110, guid: 3f5e57d67db21409496b4dfea59e36b4, type: 2}
+--- !u!222 &22217030
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124764}
+--- !u!224 &22402878
+RectTransform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -490, y: -260}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: healthPlup
+      value: 
+      objectReference: {fileID: 424756, guid: a4c2297e393e54406942d2b17a554bb5, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Text
+      value: health
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4ad2f69edf53b4d0da2fb406b3b4a7bb,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_FontData.m_FontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AnchoredPosition.x
+      value: -490
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_AnchoredPosition.y
+      value: -260
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: removeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a2afe7c0841ae4ad686955140b6c7852, type: 3}
+    - target: {fileID: 0}
+      propertyPath: boostSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6ab5642611b34d68900ff6c99d65ca3, type: 3}
+    - target: {fileID: 0}
+      propertyPath: LifeSprite
+      value: 
+<<<<<<< HEAD
+      objectReference: {fileID: 481110, guid: 3f5e57d67db21409496b4dfea59e36b4, type: 2}
+=======
+      objectReference: {fileID: 428998, guid: 8aa75b00c60874989b2795c69a086215, type: 2}
+>>>>>>> master
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 124764}
+  m_IsPrefabParent: 1

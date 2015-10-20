@@ -40,7 +40,10 @@ function OnCollisionEnter2D(collision : Collision2D) {
 				Destroy(player);
 				Destroy(playerShip.gameObject);
      		Application.LoadLevel ("Startmenu");
-     	}else if(collision.gameObject.name=="enemyLaser(Clone)"){
+     	}
+			else if (collision.gameObject.name=="Quit") {
+				Application.Quit();
+			}else if(collision.gameObject.name=="enemyLaser(Clone)"){
      	}else{
      		AudioSource.PlayClipAtPoint(hitSound, rb.position);
         	collision.gameObject.SendMessage("hit", 10);

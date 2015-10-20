@@ -55,6 +55,6 @@ function OnCollisionEnter2D(collision : Collision2D) {
 		collision.gameObject.SendMessage("hit", 50);
 		Instantiate(Explosion, rb.position, Quaternion.identity);
 		Destroy(this.gameObject);
-		
+
 	}
 }

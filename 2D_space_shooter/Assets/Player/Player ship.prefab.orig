@@ -104,6 +104,7 @@ MonoBehaviour:
   SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
   rb: {fileID: 5061346}
   healthBar: {fileID: 22402878, guid: ce0ee641dd55a4ed7903fcf05bf63e6a, type: 2}
+  PlayerLife: {fileID: 428998, guid: 8aa75b00c60874989b2795c69a086215, type: 2}
   laser: {fileID: 453018, guid: 2627c2001e20f4140a952a6107d2b2cc, type: 2}
   v2: {x: 0, y: 0}
 --- !u!212 &21293598
@@ -157,13 +158,15 @@ Prefab:
       value: 
       objectReference: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
     - target: {fileID: 0}
-      propertyPath: pause
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
+<<<<<<< HEAD
       propertyPath: PlayerLife
       value: 
       objectReference: {fileID: 428998, guid: 8aa75b00c60874989b2795c69a086215, type: 2}
+=======
+      propertyPath: pause
+      value: 112
+      objectReference: {fileID: 0}
+>>>>>>> master
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 110672}

@@ -8,10 +8,13 @@ var	MultiplierText : GameObject;
 var	TotalText : GameObject;
 var scoreDone : int;
 
+<<<<<<< HEAD
+
+=======
 var PlayerScore : int;
 var PlayerPlayerLife : int;
 var player : GameObject;
-
+>>>>>>> master
 
 function Start () {
 
@@ -36,6 +39,15 @@ function loadNextLevel(){
 // --------
 
 function Update () {
+<<<<<<< HEAD
+
+if(ScoreInc<=PlayerScript.myScore){
+		ScoreText.GetComponent(UI.Text).text = ": " + ScoreInc;
+		ScoreInc+=10;
+	}else if(ScoreTotal<=PlayerScript.PlayerLife*PlayerScript.myScore){
+		TotalText.GetComponent(UI.Text).text = ": " + ScoreTotal;
+		ScoreInc+=20;
+=======
 	if (scoreDone == 0) {
 		if(ScoreInc < PlayerScript.myScore){
 			ScoreText.GetComponent(UI.Text).text = ": " + ScoreInc;
@@ -47,6 +59,7 @@ function Update () {
 		else{
 			scoreDone = 1;
 		}
+>>>>>>> master
 	}
 	else if (scoreDone == 1) {
 		scoreDone = -1;
