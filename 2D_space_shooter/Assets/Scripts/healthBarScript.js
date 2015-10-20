@@ -20,6 +20,7 @@ function Start(){
   healthArray = [];
   lifeArray = [];
 
+
 	AudioSource.PlayClipAtPoint(lifeSound,Vector2(0,0));
 	for(var j = 0; j<PlayerScript.PlayerLife;j++){
 	yield WaitForSeconds(0.15);
@@ -45,8 +46,8 @@ function Start(){
 
 function removeHealth(damage : int){
 	AudioSource.PlayClipAtPoint(removeSound,Vector2(0,0));
-  damage = damage/divisor;
-  for (var i = 0; i < damage; i++) {
+  var internalDamage = damage/divisor;
+  for (var i = 0; i < internalDamage; i++) {
     if (healthArray.length <= 0) {
       break;
     }

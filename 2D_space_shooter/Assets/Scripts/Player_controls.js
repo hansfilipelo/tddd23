@@ -51,9 +51,6 @@ function Start(){
 		platform = "MacOS";
 	}
 
-	// Full volume is too loud.
-	AudioListener.volume = 0.5;
-
 	paused = 0;
 	nameEntering = 0;
 	shootDelay = 0.2;
@@ -65,7 +62,7 @@ function Start(){
 		controllerAvail = 0;
 	}
 	deadZone = 0.4;
-	
+
 }
 
 // -------
@@ -118,7 +115,7 @@ function pauser(){
 	}
 	else {
 		Time.timeScale = 1;
-		AudioListener.volume = 0.5;
+		AudioListener.volume = 1;
 		paused = 0;
 	}
 }

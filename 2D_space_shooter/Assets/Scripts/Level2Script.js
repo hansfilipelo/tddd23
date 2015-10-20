@@ -53,7 +53,6 @@ var player : GameObject;
 
 function Start () {
 	player = GameObject.Find("Player");
-	player.SendMessage("setHealthBar");
 	// ----------
 	// Spawn times for enemies
 	meteorWaveTime = 2; // 2
