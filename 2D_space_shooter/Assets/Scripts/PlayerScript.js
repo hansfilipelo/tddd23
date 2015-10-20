@@ -44,6 +44,14 @@ function setHealthBar(){
 
 // --------
 
+function setScoreText(){
+	yield WaitForSeconds(1);
+	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
+	this.score(0);
+}
+
+// --------
+
 function score(nr : int){
 	myScore += nr;
 	scoreText.text = "Score: " + myScore;
@@ -180,9 +188,11 @@ function Update () {
 		}else if(deathTime-Time.time>=1){
 			deathTimeText.GetComponent(UI.Text).text = "1";
 		}else if(deathTime-Time.time>=0){
-			Destroy(healthBar.gameObject);
 			Application.LoadLevel (Application.loadedLevel);
 			clone = Instantiate(PlayerShip, rb.position, Quaternion.identity);
+			clone.SendMessage("setHealthBar",healthBar);
+			healthBar.gameObject.SendMessage("Start");
+			this.SendMessage("setScoreText");
 			clone.name = "Player ship";
 			clone.SendMessage("Start");
 			Dead = false;
