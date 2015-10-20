@@ -332,6 +332,7 @@ MonoBehaviour:
   boss1SpawnTime: 0
   boss1Time: 50
   boss1Spawned: 0
+  player: {fileID: 0}
 --- !u!4 &598655525
 Transform:
   m_ObjectHideFlags: 0
@@ -808,7 +809,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1898445365
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9d879efc59aac4fafbe5f3733ff310db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75f27497389a64c84bfa124df52c948b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1741414598
 Transform:
@@ -928,8 +929,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1898445365
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 9d879efc59aac4fafbe5f3733ff310db, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 75f27497389a64c84bfa124df52c948b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1996892123
 Transform:
   m_ObjectHideFlags: 0

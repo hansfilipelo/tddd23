@@ -133,8 +133,9 @@ function Death(){
 
 	if (PlayerLife<=0){
 		this.saveScore();
-		Destroy(clone.gameObject);
 		Destroy(this.gameObject);
+		Destroy(clone.gameObject);
+		Destroy(healthBar.gameObject);
 		Application.LoadLevel ("GameOver");
 	}else{
 		Destroy(clone.gameObject);

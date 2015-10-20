@@ -34,10 +34,7 @@ function Update () {
 		Text.GetComponent(UI.Text).text = "game over";
 		text2spawned=1;
 	 }else if(Time.time>loadtime){
-	 	player.SendMessage("saveScore");
-	 	player.SendMessage("safeDestroy");
-		Destroy(player);
-		Destroy(playerShip.gameObject);
+
 		Application.LoadLevel("Startmenu");
 	}
 }
