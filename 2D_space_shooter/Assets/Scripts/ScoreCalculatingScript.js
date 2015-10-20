@@ -12,10 +12,9 @@ var PlayerScore : int;
 var PlayerPlayerLife : int;
 var player : GameObject;
 
+
 function Start () {
-	//var player = GameObject.Find("Player");
-	//PlayerScore = player.myScore;
-	//PlayerPlayerLife = player.PlayerLife;
+
 	ScoreText = GameObject.Find("Score");
 	MultiplierText = GameObject.Find("Multipliervalue");
 	TotalText = GameObject.Find("FinalScore");

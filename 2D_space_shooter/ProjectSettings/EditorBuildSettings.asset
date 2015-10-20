@@ -15,3 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes and fader/Level2.unity
   - enabled: 1
     path: Assets/Scenes and fader/Transition.unity
+  - enabled: 1
+    path: Assets/Scenes and fader/GameOver.unity
+  - enabled: 1
+    path: Assets/Scenes and fader/GameFinished.unity
