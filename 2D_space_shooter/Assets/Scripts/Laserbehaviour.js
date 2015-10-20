@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 var rb: Rigidbody2D;
 var hitSound : AudioClip;
@@ -32,7 +32,7 @@ function Update () {
 function OnCollisionEnter2D(collision : Collision2D) {
 
      	if (collision.gameObject.name=="Playbutton") {
-     		Application.LoadLevel ("Level1");
+     		Application.LoadLevel ("playerName");
    		}else if(collision.gameObject.name=="Leaderboard"){
      		Application.LoadLevel ("Leaderboard");
      	}else if(collision.gameObject.name=="Backbutton"){

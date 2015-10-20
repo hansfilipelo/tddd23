@@ -17,6 +17,7 @@ var deadZone : float;
 var Speed : float;
 var shootCount : int=0;
 static var paused : int;
+static var nameEntering : int;
 var life : float;
 var lastShootTime : float;
 var shootDelay : float;
@@ -54,6 +55,7 @@ function Start(){
 	AudioListener.volume = 0.5;
 
 	paused = 0;
+	nameEntering = 0;
 	shootDelay = 0.2;
 
 	if(Input.GetJoystickNames().length > 0){
@@ -70,6 +72,18 @@ function Start(){
 
 function setHealthBar(bar : Transform){
 	healthBar = bar;
+}
+
+// -----
+
+function waitForName(){
+	nameEntering = 1;
+}
+
+// ------
+
+function stopWaitingForName(){
+	nameEntering = 0;
 }
 
 // -------
@@ -114,65 +128,66 @@ function pauser(){
 function Update () {
 
 	// Movement
-	if (controllerAvail) {
-		joyX = Input.GetAxis("Horizontal");
-		joyY = Input.GetAxis("Vertical");
-		rightTrigger = Input.GetAxis("Fire1");
+	if (!nameEntering){
+		if (controllerAvail) {
+			joyX = Input.GetAxis("Horizontal");
+			joyY = Input.GetAxis("Vertical");
+			rightTrigger = Input.GetAxis("Fire1");
 
-		// Move Horizontally
-		if (joyX > deadZone && rb.position[0] < Upperboundry_x) {
-			v2 += Vector2(joyX,0);
-		}
-		else if(joyX < -deadZone && rb.position[0] > Lowerboundry_x) {
-			v2 += Vector2(joyX,0);
-		}
-		// Move Vertically
-		if (joyY > deadZone && rb.position[1] < Upperboundry_y) {
-			v2 += Vector2(0,joyY);
-		}
-		else if (joyY < -deadZone && rb.position[1] > Lowerboundry_y) {
-			v2 += Vector2(0,joyY);
-		}
+			// Move Horizontally
+			if (joyX > deadZone && rb.position[0] < Upperboundry_x) {
+				v2 += Vector2(joyX,0);
+			}
+			else if(joyX < -deadZone && rb.position[0] > Lowerboundry_x) {
+				v2 += Vector2(joyX,0);
+			}
+			// Move Vertically
+			if (joyY > deadZone && rb.position[1] < Upperboundry_y) {
+				v2 += Vector2(0,joyY);
+			}
+			else if (joyY < -deadZone && rb.position[1] > Lowerboundry_y) {
+				v2 += Vector2(0,joyY);
+			}
 
-		rb.MovePosition(rb.position + Speed * v2 * Time.fixedDeltaTime);
+			rb.MovePosition(rb.position + Speed * v2 * Time.fixedDeltaTime);
 
-		if(Input.GetButton("Fire1"))
-		{
-			if (Time.time - lastShootTime >= shootDelay){
+			if(Input.GetButton("Fire1"))
+			{
+				if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
 					lastShootTime = Time.time;
 				}
+			}
 		}
-	}
-	else{
-		if (Input.GetKey(MoveUp) && rb.position[1] < Upperboundry_y)
-		{
-			v2 += Vector2(0,1);
-		}
-		if(Input.GetKey(MoveDown) && rb.position[1] > Lowerboundry_y)
-		{
-			v2 += Vector2(0,-1);
-		}
-		if(Input.GetKey(MoveLeft) && rb.position[0] > Lowerboundry_x)
-		{
-			v2 += Vector2(-1,0);
-		}
-		if(Input.GetKey(MoveRight) && rb.position[0] < Upperboundry_x)
-		{
-			v2 += Vector2(1,0);
-		}
+		else{
+			if (Input.GetKey(MoveUp) && rb.position[1] < Upperboundry_y)
+			{
+				v2 += Vector2(0,1);
+			}
+			if(Input.GetKey(MoveDown) && rb.position[1] > Lowerboundry_y)
+			{
+				v2 += Vector2(0,-1);
+			}
+			if(Input.GetKey(MoveLeft) && rb.position[0] > Lowerboundry_x)
+			{
+				v2 += Vector2(-1,0);
+			}
+			if(Input.GetKey(MoveRight) && rb.position[0] < Upperboundry_x)
+			{
+				v2 += Vector2(1,0);
+			}
 
-		rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
+			rb.MovePosition(rb.position + Speed * v2.normalized * Time.fixedDeltaTime);
 
-		if(Input.GetKey(Shoot))
-		{
-			if (Time.time - lastShootTime >= shootDelay){
+			if(Input.GetKey(Shoot))
+			{
+				if (Time.time - lastShootTime >= shootDelay){
 					Instantiate(laser, rb.position +Vector2(0,0.8) , Quaternion.identity);
 					lastShootTime = Time.time;
 				}
+			}
 		}
 	}
-
 
 	if (Input.GetKeyDown(KeyCode.Escape)) {
 		var player = gameObject.Find("Player");

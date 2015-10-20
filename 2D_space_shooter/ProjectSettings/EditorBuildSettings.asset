@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Scenes and fader/GameOver.unity
   - enabled: 1
     path: Assets/Scenes and fader/GameFinished.unity
+  - enabled: 1
+    path: Assets/Scenes and fader/playerName.unity

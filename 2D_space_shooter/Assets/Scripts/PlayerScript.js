@@ -35,7 +35,7 @@ function Start () {
 // --------
 
 function setHealthBar(){
-	//yield WaitForSeconds(0.7);
+	yield WaitForSeconds(0.7);
 	scoreText = GameObject.Find("scoreText").GetComponent.<GUIText>();
 	this.score(0);
 	healthBar = Instantiate(healthBarPrefab,Vector2(0,0), Quaternion.identity);
@@ -47,6 +47,18 @@ function setHealthBar(){
 function score(nr : int){
 	myScore += nr;
 	scoreText.text = "Score: " + myScore;
+}
+
+// -----
+
+function waitForName(){
+	clone.gameObject.SendMessage("waitForName");
+}
+
+// ------
+
+function stopWaitingForName(){
+	clone.gameObject.SendMessage("stopWaitingForName");
 }
 
 // -----
