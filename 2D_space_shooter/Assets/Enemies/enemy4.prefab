@@ -79,7 +79,11 @@ MonoBehaviour:
   maxShootCount: 0
   yMovement: 0
   Explosion: {fileID: 400010, guid: 031d08f52af1daa4f929b85221519426, type: 2}
-  SmallExplosion: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
+  levelBarrier: 0
+  player: {fileID: 0}
+  score: 20
+  edgeForMe: 0
+  tempEdge: 0
   laser: {fileID: 419176, guid: 96bc84c8677d34e3193f9dddf04b5aa0, type: 2}
 --- !u!212 &21272556
 SpriteRenderer:
@@ -103,7 +107,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1898445365
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 92b479588124c43c48906ea3dfcf702e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -142,6 +146,14 @@ Prefab:
       propertyPath: SmallExplosion
       value: 
       objectReference: {fileID: 477980, guid: d81a2acf14aea48f6a24664dcc0c26b2, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1898445365
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 160322}

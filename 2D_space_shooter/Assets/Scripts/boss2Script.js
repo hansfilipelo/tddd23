@@ -117,6 +117,6 @@ function Update () {
 
 function OnCollisionEnter2D(collision : Collision2D) {
 	if (collision.gameObject.name == "Player ship") {
-		collision.gameObject.SendMessage("hit", 50);
+		collision.gameObject.SendMessage("hit", 100);
 	}
 }
